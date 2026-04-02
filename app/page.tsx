@@ -15,7 +15,7 @@ export default function PanaderiaCarlitaWeb() {
       ],
       descripcion: 'Suaves, rellenos y bien caseros, ideales para acompañar el mate o regalar.',
       frase: 'Un clásico dulce que siempre queda bien.',
-      imagen: '/productos/alfajores-maicenaa.jpg',
+      imagen: '/productos/alfajores.jpg',
       ingredientes: 'Pendiente de agregar ingredientes.',
     },
     {
@@ -140,11 +140,6 @@ export default function PanaderiaCarlitaWeb() {
               <div key={producto.id} className="overflow-hidden rounded-3xl bg-white shadow-sm border border-amber-100">
                 <img src={producto.imagen} alt={producto.nombre} className="h-56 w-full object-cover" />
                 <div className="p-6">
-                <img 
-  src={producto.imagen} 
-  alt={producto.nombre} 
-  className="w-full h-40 object-cover rounded-xl mb-2"
-/>
                   <h3 className="text-xl font-semibold">{producto.nombre}</h3>
                   <p className="mt-2 text-stone-600">{producto.descripcion}</p>
                   <p className="mt-3 text-sm font-medium italic text-amber-800">“{producto.frase}”</p>
