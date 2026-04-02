@@ -242,7 +242,7 @@ export default function PanaderiaCarlitaWeb() {
               value={nota}
               onChange={(e) => setNota(e.target.value)}
               className="min-h-[120px] w-full rounded-2xl border border-stone-300 px-4 py-3 outline-none"
-              placeholder="Ej: para regalo, retirar después de las 18:30, con menos coco, etc."
+              placeholder="Ej: Tocar timbre, retirar después de las 18:30, con menos coco, etc."
             />
           </div>
 
