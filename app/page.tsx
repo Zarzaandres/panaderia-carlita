@@ -15,7 +15,7 @@ export default function PanaderiaCarlitaWeb() {
       ],
       descripcion: 'Suaves, rellenos y bien caseros, ideales para acompañar el mate o regalar.',
       frase: 'Un clásico dulce que siempre queda bien.',
-      imagen: 'https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=900&q=80',
+      imagen: '/productos/alfajores-maicenaa.jpg',
       ingredientes: 'Pendiente de agregar ingredientes.',
     },
     {
@@ -27,7 +27,7 @@ export default function PanaderiaCarlitaWeb() {
       ],
       descripcion: 'Variedad de facturas artesanales para desayunos, meriendas y reuniones.',
       frase: 'Perfectas para compartir en familia.',
-      imagen: 'https://images.unsplash.com/photo-1517433670267-08bbd4be890f?auto=format&fit=crop&w=900&q=80',
+      imagen: '/productos/facturas.jpg',
       ingredientes: 'Pendiente de agregar ingredientes.',
     },
     {
@@ -39,7 +39,7 @@ export default function PanaderiaCarlitaWeb() {
       ],
       descripcion: 'Masa suave y dulce, con ese sabor tradicional de panadería de barrio.',
       frase: 'La compañera ideal para unos buenos mates.',
-      imagen: 'https://images.unsplash.com/photo-1483695028939-5bb13f8648b0?auto=format&fit=crop&w=900&q=80',
+      imagen: '/productos/caras-sucias.jpg',
       ingredientes: 'Pendiente de agregar ingredientes.',
     },
     {
@@ -51,7 +51,7 @@ export default function PanaderiaCarlitaWeb() {
       ],
       descripcion: 'Pan artesanal trenzado, tierno y con sabor bien casero.',
       frase: 'Recién horneado, rico y rendidor.',
-      imagen: 'https://images.unsplash.com/photo-1608198093002-ad4e005484ec?auto=format&fit=crop&w=900&q=80',
+      imagen: '/productos/pan-trenzado.jpg',
       ingredientes: 'Pendiente de agregar ingredientes.',
     },
     {
@@ -60,7 +60,7 @@ export default function PanaderiaCarlitaWeb() {
       variantes: [{ nombre: 'Unidad', precio: 7000 }],
       descripcion: 'Ideal para reuniones, picadas o para tener algo rico y práctico en casa.',
       frase: 'Sabor casero que llena la mesa.',
-      imagen: 'https://images.unsplash.com/photo-1504754524776-8f4f37790ca0?auto=format&fit=crop&w=900&q=80',
+      imagen: '/productos/budin-pan-salado.jpg',
       ingredientes: 'Pendiente de agregar ingredientes.',
     },
   ];
@@ -140,6 +140,11 @@ export default function PanaderiaCarlitaWeb() {
               <div key={producto.id} className="overflow-hidden rounded-3xl bg-white shadow-sm border border-amber-100">
                 <img src={producto.imagen} alt={producto.nombre} className="h-56 w-full object-cover" />
                 <div className="p-6">
+                <img 
+  src={producto.imagen} 
+  alt={producto.nombre} 
+  className="w-full h-40 object-cover rounded-xl mb-2"
+/>
                   <h3 className="text-xl font-semibold">{producto.nombre}</h3>
                   <p className="mt-2 text-stone-600">{producto.descripcion}</p>
                   <p className="mt-3 text-sm font-medium italic text-amber-800">“{producto.frase}”</p>
