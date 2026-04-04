@@ -66,6 +66,17 @@ export default function PanaderiaCarlitaWeb() {
       ingredientes: 'Pendiente de agregar ingredientes.',
     },
     {
+  id: 'pan-lenteja',
+  nombre: 'Pan de lenteja',
+  variantes: [
+    { nombre: 'Unidad', precio: 1500 }
+  ],
+  descripcion: 'Pan saludable hecho a base de lentejas, sin harina, ideal para una alimentación más liviana.',
+  frase: 'Rico, nutritivo y apto para todos.',
+  imagen: '/productos/pan-lenteja.jpeg',
+  ingredientes: 'Lentejas, huevos, condimentos naturales.',
+},
+    {
       id: 'budin-pan-salado',
       nombre: 'Budín de pan salado',
       variantes: [{ nombre: 'Unidad', precio: 7000 }],
