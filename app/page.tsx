@@ -43,6 +43,17 @@ export default function PanaderiaCarlitaWeb() {
       ingredientes: 'Pendiente de agregar ingredientes.',
     },
     {
+  id: 'rosca-dulce',
+  nombre: 'Rosca dulce',
+  variantes: [
+    { nombre: 'Unidad', precio: 5000 }
+  ],
+  descripcion: 'Rosca esponjosa y dulce, ideal para compartir en familia.',
+  frase: 'Un clásico de fechas especiales.',
+  imagen: '/productos/rozca.jpeg',
+  ingredientes: 'Pendiente de agregar ingredientes.',
+},
+    {
       id: 'pan-casero-trenzado',
       nombre: 'Pan casero trenzado',
       variantes: [
@@ -63,6 +74,30 @@ export default function PanaderiaCarlitaWeb() {
       imagen: '/productos/budin-pan-salado.jpg',
       ingredientes: 'Pendiente de agregar ingredientes.',
     },
+    {
+  id: 'sopa-paraguaya',
+  nombre: 'Sopa paraguaya',
+  variantes: [
+    { nombre: 'Porción', precio: 2500 },
+    { nombre: 'Bandeja', precio: 6000 }
+  ],
+  descripcion: 'Tarta salada tradicional, suave y con mucho sabor.',
+  frase: 'Perfecta para acompañar cualquier comida.',
+  imagen: '/productos/sopa-paraguaya.jpeg',
+  ingredientes: 'Pendiente de agregar ingredientes.',
+},
+{
+  id: 'torta-queso',
+  nombre: 'Torta de queso',
+  variantes: [
+    { nombre: 'Porción', precio: 3000 },
+    { nombre: 'Entera', precio: 8000 }
+  ],
+  descripcion: 'Torta suave y cremosa, ideal para los amantes del queso.',
+  frase: 'Un postre irresistible.',
+  imagen: '/productos/torta-queso.jpg',
+  ingredientes: 'Pendiente de agregar ingredientes.',
+},
   ];
 
   const [nombre, setNombre] = useState('');
@@ -115,7 +150,7 @@ export default function PanaderiaCarlitaWeb() {
           <p className="mt-4 max-w-2xl text-base md:text-lg text-stone-700">
             Elegí tus productos, seleccioná fecha y hora aproximada, agregá una nota y enviá tu pedido directo por WhatsApp.
           </p>
-          <div className="mt-6 flex justify-center gap-3 text-sm text-stone-700">
+          <div className="mt-6 flex justify-start gap-3 text-sm text-stone-700 ml-4">
             <span className="rounded-full bg-white px-4 py-2 shadow-sm">9:30 a 12:30</span>
             <span className="rounded-full bg-white px-4 py-2 shadow-sm">18:00 a 22:00</span>
           </div>
