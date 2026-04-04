@@ -159,7 +159,9 @@ export default function PanaderiaCarlitaWeb() {
           <p className="text-sm font-medium uppercase tracking-[0.2em] text-amber-800">Panadería artesanal</p>
           <h1 className="mt-3 text-4xl font-bold md:text-6xl">Panadería Carlita</h1>
           <p className="mt-4 max-w-2xl text-base md:text-lg text-stone-700">
-            Elegí tus productos, seleccioná fecha y hora aproximada, agregá una nota y enviá tu pedido directo por WhatsApp.
+            Panadería por pedidos, hecha en casa con dedicación. 
+            Cada producto se prepara especialmente para vos 💛 
+            Realizá tu pedido por WhatsApp y coordinamos la entrega.
           </p>
           <div className="mt-6 flex justify-start gap-3 text-sm text-stone-700 ml-4">
             <span className="rounded-full bg-white px-4 py-2 shadow-sm">9:30 a 12:30</span>
