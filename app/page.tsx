@@ -28,7 +28,7 @@ export default function PanaderiaCarlitaWeb() {
       descripcion: 'Variedad de facturas artesanales para desayunos, meriendas y reuniones.',
       frase: 'Perfectas para compartir en familia.',
       imagen: '/productos/facturas.jpeg',
-      ingredientes: 'Pendiente de agregar ingredientes.',
+      ingredientes: 'Harina 0000, levadura seca, leche, huevo, azucar, manteca, esencia de vainilla, dulce de leche, membrillo, coco rallado.',
     },
     {
       id: 'cara-sucia',
@@ -40,7 +40,7 @@ export default function PanaderiaCarlitaWeb() {
       descripcion: 'Masa suave y dulce, con ese sabor tradicional de panadería de barrio.',
       frase: 'La compañera ideal para unos buenos mates.',
       imagen: '/productos/caras-sucias.jpg',
-      ingredientes: 'Pendiente de agregar ingredientes.',
+      ingredientes: 'Harina 0000, manteca, sal, levadura fresca, extracto malta, azucar negra, harina 000.',
     },
     {
   id: 'rosca-dulce',
@@ -51,7 +51,7 @@ export default function PanaderiaCarlitaWeb() {
   descripcion: 'Rosca esponjosa y dulce, ideal para compartir en familia.',
   frase: 'Un clásico de fechas especiales.',
   imagen: '/productos/rozca.jpeg',
-  ingredientes: 'Pendiente de agregar ingredientes.',
+  ingredientes: 'Harina 0000, manteca, huevos, leche, esencia de vainilla, miel, agua de azahar, ralladura de naranja, sal, azucar, maicena, cereza, dulce de leche.',
 },
     {
       id: 'pan-casero-trenzado',
@@ -83,7 +83,7 @@ export default function PanaderiaCarlitaWeb() {
       descripcion: 'Ideal para reuniones, picadas o para tener algo rico y práctico en casa.',
       frase: 'Sabor casero que llena la mesa.',
       imagen: '/productos/budin-pan-salado.jpg',
-      ingredientes: 'Pendiente de agregar ingredientes.',
+      ingredientes: 'Harina 0000, huevos, manteca, leche, quesos, jamón.',
     },
     {
   id: 'sopa-paraguaya',
@@ -95,7 +95,7 @@ export default function PanaderiaCarlitaWeb() {
   descripcion: 'Tarta salada tradicional, suave y con mucho sabor.',
   frase: 'Perfecta para acompañar cualquier comida.',
   imagen: '/productos/sopa-paraguaya.jpeg',
-  ingredientes: 'Pendiente de agregar ingredientes.',
+  ingredientes: 'Harina de maíz, leche, cebollas, huevos, queso, choclo, oregano, sal, pimienta.',
 },
 {
   id: 'torta-queso',
@@ -107,7 +107,7 @@ export default function PanaderiaCarlitaWeb() {
   descripcion: 'Torta suave y cremosa, ideal para los amantes del queso.',
   frase: 'Un postre irresistible.',
   imagen: '/productos/torta-queso.jpg',
-  ingredientes: 'Pendiente de agregar ingredientes.',
+  ingredientes: 'Harina leudante, polvo de hornear, leche, manteca, sal, huevos y queso.',
 },
   ];
 
