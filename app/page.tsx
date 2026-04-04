@@ -27,7 +27,7 @@ export default function PanaderiaCarlitaWeb() {
       ],
       descripcion: 'Variedad de facturas artesanales para desayunos, meriendas y reuniones.',
       frase: 'Perfectas para compartir en familia.',
-      imagen: '/productos/facturas.jpg',
+      imagen: '/productos/facturas.jpeg',
       ingredientes: 'Pendiente de agregar ingredientes.',
     },
     {
