@@ -132,27 +132,28 @@ export default function PanaderiaCarlitaWeb() {
 
   const total = (varianteSeleccionada?.precio || 0) * Number(cantidad || 0);
 
-  const mensajeWhatsapp = useMemo(() => {
-    const lineas = [
-      'Hola, quiero hacer un pedido en Panadería Carlita.',
-      '',
-      `Nombre: ${nombre || '-'} `,
-      `Teléfono: ${telefono || '-'} `,
-      `Producto: ${productoSeleccionado.nombre}`,
-      `Variante: ${varianteSeleccionada.nombre}`,
-      `Cantidad: ${cantidad}`,
-      `Fecha deseada: ${fecha || '-'} `,
-      `Hora aproximada: ${hora || '-'} `,
-      
-      `Nota adicional: ${nota || '-'} `,
-      '',
-      `Total estimado: $${total.toLocaleString('es-AR')}`,
-    ];
+ const Whatsapp = useMemo(() => {
+  const lineas = [
+    'Hola, quiero hacer un pedido en Panadería Carlita.',
+    '',
+    `Nombre: ${nombre || '-'}`,
+    `Teléfono: ${telefono || '-'}`,
+    `Producto: ${productoSeleccionado.nombre}`,
+    `Variante: ${varianteSeleccionada.nombre}`,
+    `Cantidad: ${cantidad}`,
+    `Fecha deseada: ${fecha || '-'}`,
+    
+    `Entrega: Por la tarde (17:00 a 20:00)`,
+    
+    `Nota adicional: ${nota || '-'}`,
+    '',
+    `Total estimado: $${total.toLocaleString('es-AR')}`,
+  ];
 
-    return encodeURIComponent(lineas.join('\n'));
-  }, [nombre, telefono, productoSeleccionado, varianteSeleccionada, cantidad, fecha, hora, nota, total]);
+  return encodeURIComponent(lineas.join('\n'));
+}, [nombre, telefono, productoSeleccionado, varianteSeleccionada, cantidad, fecha, nota, total]);
 
-  return (
+return (
     <div className="min-h-screen bg-amber-50 text-stone-800">
       <header className="bg-gradient-to-r from-amber-200 to-orange-100 shadow-sm">
         <div className="mx-auto max-w-6xl px-6 py-10">
@@ -163,10 +164,17 @@ export default function PanaderiaCarlitaWeb() {
             Cada producto se prepara especialmente para vos 💛 
             Realizá tu pedido por WhatsApp y coordinamos la entrega.
           </p>
-          <div className="mt-6 flex justify-start gap-3 text-sm text-stone-700 ml-4">
-            <span className="rounded-full bg-white px-4 py-2 shadow-sm">9:30 a 12:30</span>
-            <span className="rounded-full bg-white px-4 py-2 shadow-sm">18:00 a 22:00</span>
-          </div>
+          <p className="text-stone-600 mt-2">
+Trabajamos por pedidos y realizamos entregas dentro de la franja horaria de la tarde.
+</p>
+
+<div className="mt-4 flex justify-start gap-3 text-sm text-stone-700">
+  <span className="rounded-full bg-white px-4 py-2 shadow-sm">17:00 a 21:00</span>
+</div>
+
+<p className="text-sm text-stone-500 mt-2">
+Coordinamos el horario exacto por WhatsApp 💛
+</p>
           <a
             href="#pedido"
             className="mt-6 inline-block rounded-2xl bg-stone-900 px-6 py-3 text-white shadow hover:scale-[1.02] transition"
