@@ -1,7 +1,6 @@
 "use client";
 
 import { useMemo, useState } from 'react';
-
 export default function PanaderiaCarlitaWeb() {
   const whatsappNumero = '543794210853';
 
@@ -118,7 +117,10 @@ export default function PanaderiaCarlitaWeb() {
   const [cantidad, setCantidad] = useState(1);
   const [fecha, setFecha] = useState('');
   const [nota, setNota] = useState('');
+const hoy = new Date();
+hoy.setDate(hoy.getDate() + 2);
 
+const fechaMinima = hoy.toISOString().split('T')[0];
   const productoSeleccionado = useMemo(
     () => productos.find((p) => p.id === productoId) || productos[0],
     [productoId]
@@ -232,7 +234,13 @@ Trabajamos por pedidos con al menos 24hs de anticipación para garantizar calida
               <label className="mb-2 block text-sm font-medium">Nombre</label>
               <input value={nombre} onChange={(e) => setNombre(e.target.value)} className="w-full rounded-2xl border border-stone-300 px-4 py-3 outline-none" placeholder="Ej: María" />
             </div>
-
+<input 
+  value={fecha} 
+  min={fechaMinima}
+  onChange={(e) => setFecha(e.target.value)} 
+  type="date" 
+  className="w-full rounded-2xl border border-stone-300 px-4 py-3 outline-none" 
+/>
             <div>
               <label className="mb-2 block text-sm font-medium">Teléfono</label>
               <input value={telefono} onChange={(e) => setTelefono(e.target.value)} className="w-full rounded-2xl border border-stone-300 px-4 py-3 outline-none" placeholder="Ej: 379..." />
@@ -285,14 +293,20 @@ Trabajamos por pedidos con al menos 24hs de anticipación para garantizar calida
 
             <div>
               <label className="mb-2 block text-sm font-medium">Fecha deseada</label>
-              <input value={fecha} onChange={(e) => setFecha(e.target.value)} type="date" className="w-full rounded-2xl border border-stone-300 px-4 py-3 outline-none" />
+              <input 
+  value={fecha} 
+  min={fechaMinima}
+  onChange={(e) => setFecha(e.target.value)} 
+  type="date" 
+  className="w-full rounded-2xl border border-stone-300 px-4 py-3 outline-none" 
+/<input 
+  value={fecha} 
+  min={fechaMinima}
+  onChange={(e) => setFecha(e.target.value)} 
+  type="date" 
+  className="w-full rounded-2xl border border-stone-300 px-4 py-3 outline-none" 
+/>
             </div>
-
-            <div>
-              <label className="mb-2 block text-sm font-medium">Hora aproximada</label>
-            </div>
-          </div>
-
           <div className="mt-6">
             <label className="mb-2 block text-sm font-medium">Nota adicional</label>
             <textarea
