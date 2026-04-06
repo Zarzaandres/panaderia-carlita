@@ -117,7 +117,6 @@ export default function PanaderiaCarlitaWeb() {
   const [varianteNombre, setVarianteNombre] = useState(productos[0].variantes[0].nombre);
   const [cantidad, setCantidad] = useState(1);
   const [fecha, setFecha] = useState('');
-  const [hora, setHora] = useState('');
   const [nota, setNota] = useState('');
 
   const productoSeleccionado = useMemo(
@@ -221,6 +220,9 @@ Coordinamos el horario exacto por WhatsApp 💛
 
         <section id="pedido" className="mt-16 rounded-3xl bg-white p-8 shadow-sm border border-amber-100">
           <h2 className="text-3xl font-bold">Formulario de pedido</h2>
+          <p className="text-sm text-stone-500 mt-2">
+Trabajamos por pedidos con al menos 24hs de anticipación para garantizar calidad y frescura 💛
+</p>
           <p className="mt-2 text-stone-600">
             Completás los datos y el pedido sale armado directo a WhatsApp.
           </p>
@@ -288,7 +290,6 @@ Coordinamos el horario exacto por WhatsApp 💛
 
             <div>
               <label className="mb-2 block text-sm font-medium">Hora aproximada</label>
-              <input value={hora} onChange={(e) => setHora(e.target.value)} type="time" className="w-full rounded-2xl border border-stone-300 px-4 py-3 outline-none" />
             </div>
           </div>
 
