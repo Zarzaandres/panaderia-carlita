@@ -219,126 +219,119 @@ Coordinamos el horario exacto por WhatsApp 💛
             ))}
           </div>
         </section>
+<section id="pedido" className="mt-16 rounded-3xl bg-white p-8 shadow-sm border border-amber-100">
+  <h2 className="text-3xl font-bold">Formulario de pedido</h2>
 
-        <section id="pedido" className="mt-16 rounded-3xl bg-white p-8 shadow-sm border border-amber-100">
-          <h2 className="text-3xl font-bold">Formulario de pedido</h2>
-          <p className="text-sm text-stone-500 mt-2">
-Trabajamos por pedidos con al menos 24hs de anticipación para garantizar calidad y frescura 💛
-</p>
-          <p className="mt-2 text-stone-600">
-            Completás los datos y el pedido sale armado directo a WhatsApp.
-          </p>
+  <p className="text-sm text-stone-500 mt-2">
+    Trabajamos por pedidos con al menos 24hs de anticipación para garantizar calidad y frescura 💛
+  </p>
 
-          <div className="mt-8 grid gap-6 md:grid-cols-2">
-            <div>
-              <label className="mb-2 block text-sm font-medium">Nombre</label>
-              <input value={nombre} onChange={(e) => setNombre(e.target.value)} className="w-full rounded-2xl border border-stone-300 px-4 py-3 outline-none" placeholder="Ej: María" />
-            </div>
-<input 
-  value={fecha} 
-  min={fechaMinima}
-  onChange={(e) => setFecha(e.target.value)} 
-  type="date" 
-  className="w-full rounded-2xl border border-stone-300 px-4 py-3 outline-none" 
-/>
-            <div>
-              <label className="mb-2 block text-sm font-medium">Teléfono</label>
-              <input value={telefono} onChange={(e) => setTelefono(e.target.value)} className="w-full rounded-2xl border border-stone-300 px-4 py-3 outline-none" placeholder="Ej: 379..." />
-            </div>
+  <p className="mt-2 text-stone-600">
+    Completás los datos y el pedido sale armado directo a WhatsApp.
+  </p>
 
-            <div>
-              <label className="mb-2 block text-sm font-medium">Producto</label>
-              <select
-                value={productoId}
-                onChange={(e) => {
-                  const nuevo = productos.find((p) => p.id === e.target.value);
-                  setProductoId(e.target.value);
-                  setVarianteNombre(nuevo?.variantes[0]?.nombre || '');
-                }}
-                className="w-full rounded-2xl border border-stone-300 px-4 py-3 outline-none"
-              >
-                {productos.map((producto) => (
-                  <option key={producto.id} value={producto.id}>
-                    {producto.nombre}
-                  </option>
-                ))}
-              </select>
-            </div>
+  <div className="mt-8 grid gap-6 md:grid-cols-2">
+    
+    <div>
+      <label className="mb-2 block text-sm font-medium">Nombre</label>
+      <input value={nombre} onChange={(e) => setNombre(e.target.value)} className="w-full rounded-2xl border border-stone-300 px-4 py-3 outline-none" />
+    </div>
 
-            <div>
-              <label className="mb-2 block text-sm font-medium">Presentación</label>
-              <select
-                value={varianteNombre}
-                onChange={(e) => setVarianteNombre(e.target.value)}
-                className="w-full rounded-2xl border border-stone-300 px-4 py-3 outline-none"
-              >
-                {productoSeleccionado.variantes.map((variante) => (
-                  <option key={variante.nombre} value={variante.nombre}>
-                    {variante.nombre} - ${variante.precio.toLocaleString('es-AR')}
-                  </option>
-                ))}
-              </select>
-            </div>
+    <div>
+      <label className="mb-2 block text-sm font-medium">Teléfono</label>
+      <input value={telefono} onChange={(e) => setTelefono(e.target.value)} className="w-full rounded-2xl border border-stone-300 px-4 py-3 outline-none" />
+    </div>
 
-            <div>
-              <label className="mb-2 block text-sm font-medium">Cantidad</label>
-              <input
-                type="number"
-                min="1"
-                value={cantidad}
-                onChange={(e) => setCantidad(Number(e.target.value))}
-                className="w-full rounded-2xl border border-stone-300 px-4 py-3 outline-none"
-              />
-            </div>
+    <div>
+      <label className="mb-2 block text-sm font-medium">Producto</label>
+      <select
+        value={productoId}
+        onChange={(e) => {
+          const nuevo = productos.find((p) => p.id === e.target.value);
+          setProductoId(e.target.value);
+          setVarianteNombre(nuevo?.variantes[0]?.nombre || '');
+        }}
+        className="w-full rounded-2xl border border-stone-300 px-4 py-3 outline-none"
+      >
+        {productos.map((producto) => (
+          <option key={producto.id} value={producto.id}>
+            {producto.nombre}
+          </option>
+        ))}
+      </select>
+    </div>
 
-            <div>
-              <label className="mb-2 block text-sm font-medium">Fecha deseada</label>
-              <input 
-  value={fecha} 
-  min={fechaMinima}
-  onChange={(e) => setFecha(e.target.value)} 
-  type="date" 
-  className="w-full rounded-2xl border border-stone-300 px-4 py-3 outline-none" 
-  />
-<input 
-  value={fecha} 
-  min={fechaMinima}
-  onChange={(e) => setFecha(e.target.value)} 
-  type="date" 
-  className="w-full rounded-2xl border border-stone-300 px-4 py-3 outline-none" 
-/>
-            </div>
-          <div className="mt-6">
-            <label className="mb-2 block text-sm font-medium">Nota adicional</label>
-            <textarea
-              value={nota}
-              onChange={(e) => setNota(e.target.value)}
-              className="min-h-[120px] w-full rounded-2xl border border-stone-300 px-4 py-3 outline-none"
-              placeholder="Ej: Tocar timbre, retirar después de las 18:30, con menos coco, etc."
-            />
-          </div>
+    <div>
+      <label className="mb-2 block text-sm font-medium">Presentación</label>
+      <select
+        value={varianteNombre}
+        onChange={(e) => setVarianteNombre(e.target.value)}
+        className="w-full rounded-2xl border border-stone-300 px-4 py-3 outline-none"
+      >
+        {productoSeleccionado.variantes.map((variante) => (
+          <option key={variante.nombre} value={variante.nombre}>
+            {variante.nombre} - ${variante.precio.toLocaleString('es-AR')}
+          </option>
+        ))}
+      </select>
+    </div>
 
-          <div className="mt-8 grid gap-4 md:grid-cols-2">
-            <div className="rounded-2xl bg-amber-50 p-5 text-stone-700">
-              <p className="font-semibold">WhatsApp de pedidos</p>
-              <p className="mt-2">3794210853</p>
-            </div>
-            <div className="rounded-2xl bg-stone-900 p-5 text-white">
-              <p className="font-semibold">Total estimado</p>
-              <p className="mt-2 text-2xl font-bold">${total.toLocaleString('es-AR')}</p>
-            </div>
-          </div>
+    <div>
+      <label className="mb-2 block text-sm font-medium">Cantidad</label>
+      <input
+        type="number"
+        min="1"
+        value={cantidad}
+        onChange={(e) => setCantidad(Number(e.target.value))}
+        className="w-full rounded-2xl border border-stone-300 px-4 py-3 outline-none"
+      />
+    </div>
 
-          <a
-            href={`https://wa.me/${whatsappNumero}?text=${mensajeWhatsapp}`}
-            target="_blank"
-            rel="noreferrer"
-            className="mt-6 inline-block rounded-2xl bg-green-600 px-6 py-3 font-medium text-white shadow hover:scale-[1.02] transition"
-          >
-            Enviar pedido por WhatsApp
-          </a>
-        </section>
-      </main>
+    <div>
+      <label className="mb-2 block text-sm font-medium">Fecha deseada</label>
+      <input 
+        value={fecha} 
+        min={fechaMinima}
+        onChange={(e) => setFecha(e.target.value)} 
+        type="date" 
+        className="w-full rounded-2xl border border-stone-300 px-4 py-3 outline-none" 
+      />
+    </div>
+
+  </div>
+
+  <div className="mt-6">
+    <label className="mb-2 block text-sm font-medium">Nota adicional</label>
+    <textarea
+      value={nota}
+      onChange={(e) => setNota(e.target.value)}
+      className="min-h-[120px] w-full rounded-2xl border border-stone-300 px-4 py-3 outline-none"
+    />
+  </div>
+
+  <div className="mt-8 grid gap-4 md:grid-cols-2">
+    <div className="rounded-2xl bg-amber-50 p-5 text-stone-700">
+      <p className="font-semibold">WhatsApp de pedidos</p>
+      <p className="mt-2">3794210853</p>
+    </div>
+
+    <div className="rounded-2xl bg-stone-900 p-5 text-white">
+      <p className="font-semibold">Total estimado</p>
+      <p className="mt-2 text-2xl font-bold">${total.toLocaleString('es-AR')}</p>
+    </div>
+  </div>
+
+  <a
+    href={`https://wa.me/${whatsappNumero}?text=${Whatsapp}`}
+    target="_blank"
+    rel="noreferrer"
+    className="mt-6 inline-block rounded-2xl bg-green-600 px-6 py-3 font-medium text-white shadow hover:scale-[1.02] transition"
+  >
+    Enviar pedido por WhatsApp
+  </a>
+
+</section>
+       </main>
     </div>
   );
 }
