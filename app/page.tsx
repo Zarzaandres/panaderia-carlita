@@ -76,7 +76,7 @@ export default function PanaderiaCarlitaWeb() {
   ingredientes: 'Lentejas, huevos, condimentos naturales.',
 },
     {
-      id: 'budin-pan-salado',
+      id: 'Pan de molde con relleno',
       nombre: 'Budín de pan salado',
       variantes: [{ nombre: 'Unidad', precio: 7000 }],
       descripcion: 'Ideal para reuniones, picadas o para tener algo rico y práctico en casa.',
