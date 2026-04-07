@@ -172,10 +172,6 @@ Trabajamos por pedidos y realizamos entregas dentro de la franja horaria de la t
 <div className="mt-4 flex justify-start gap-3 text-sm text-stone-700">
   <span className="rounded-full bg-white px-4 py-2 shadow-sm">17:00 a 21:00</span>
 </div>
-
-<p className="text-sm text-stone-500 mt-2">
-Coordinamos el horario exacto por WhatsApp 💛
-</p>
           <a
             href="#pedido"
             className="mt-6 inline-block rounded-2xl bg-stone-900 px-6 py-3 text-white shadow hover:scale-[1.02] transition"
