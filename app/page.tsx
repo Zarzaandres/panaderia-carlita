@@ -91,7 +91,7 @@ export default function PanaderiaCarlitaWeb() {
     { nombre: 'Porción', precio: 4500 },
     { nombre: 'Bandeja', precio: 8000 }
   ],
-  descripcion: 'Tarta salada tradicional, suave y con mucho sabor.',
+  descripcion: 'Tarta salada tradicional, suave y con mucho sabor. Molde mediano',
   frase: 'Perfecta para acompañar cualquier comida.',
   imagen: '/productos/sopa-paraguaya.jpeg',
   ingredientes: 'Harina de maíz, leche, cebollas, huevos, queso, choclo, oregano, sal, pimienta.',
@@ -103,7 +103,7 @@ export default function PanaderiaCarlitaWeb() {
     { nombre: 'Porción', precio: 4500 },
     { nombre: 'Entera', precio: 8000 }
   ],
-  descripcion: 'Torta suave y cremosa, ideal para los amantes del queso.',
+  descripcion: 'Torta suave y cremosa, ideal para los amantes del queso. Molde mediano',
   frase: 'Un postre irresistible.',
   imagen: '/productos/torta-queso.jpg',
   ingredientes: 'Harina leudante, polvo de hornear, leche, manteca, sal, huevos y queso.',
