@@ -322,13 +322,13 @@ Coordinamos el horario exacto por WhatsApp 💛
   </div>
 
   <a
-    href={`https://wa.me/${whatsappNumero}?text=${Whatsapp}`}
-    target="_blank"
-    rel="noreferrer"
-    className="mt-6 inline-block rounded-2xl bg-green-600 px-6 py-3 font-medium text-white shadow hover:scale-[1.02] transition"
-  >
-    Enviar pedido por WhatsApp
-  </a>
+  href={`https://wa.me/${whatsappNumero}?text=${Whatsapp}`}
+  target="_blank"
+  rel="noreferrer"
+  className="mt-6 inline-block rounded-2xl bg-green-600 px-6 py-3 font-medium text-white shadow hover:scale-[1.02] transition"
+>
+  Enviar pedido por WhatsApp
+</a>
 
 </section>
        </main>
