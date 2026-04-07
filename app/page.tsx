@@ -82,14 +82,14 @@ export default function PanaderiaCarlitaWeb() {
       descripcion: 'Ideal para reuniones, picadas o para tener algo rico y práctico en casa. Molde de 25cm',
       frase: 'Sabor casero que llena la mesa.',
       imagen: '/productos/budin-pan-salado.jpg',
-      ingredientes: 'Harina 0000, huevos, manteca, leche, quesos, jamón.',
+      ingredientes: 'Harina 0000, sal, levadura, extracto de malta, manteca, azucar, leche, agua, jamon, queso.',
     },
     {
   id: 'sopa-paraguaya',
   nombre: 'Sopa paraguaya',
   variantes: [
-    { nombre: 'Porción', precio: 2500 },
-    { nombre: 'Bandeja', precio: 6000 }
+    { nombre: 'Porción', precio: 4500 },
+    { nombre: 'Bandeja', precio: 8000 }
   ],
   descripcion: 'Tarta salada tradicional, suave y con mucho sabor.',
   frase: 'Perfecta para acompañar cualquier comida.',
@@ -100,7 +100,7 @@ export default function PanaderiaCarlitaWeb() {
   id: 'torta-queso',
   nombre: 'Torta de queso',
   variantes: [
-    { nombre: 'Porción', precio: 3000 },
+    { nombre: 'Porción', precio: 4500 },
     { nombre: 'Entera', precio: 8000 }
   ],
   descripcion: 'Torta suave y cremosa, ideal para los amantes del queso.',
