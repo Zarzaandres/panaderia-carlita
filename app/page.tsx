@@ -299,7 +299,8 @@ Trabajamos por pedidos con al menos 24hs de anticipación para garantizar calida
   onChange={(e) => setFecha(e.target.value)} 
   type="date" 
   className="w-full rounded-2xl border border-stone-300 px-4 py-3 outline-none" 
-/<input 
+  />
+<input 
   value={fecha} 
   min={fechaMinima}
   onChange={(e) => setFecha(e.target.value)} 
