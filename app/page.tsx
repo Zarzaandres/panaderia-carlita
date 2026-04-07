@@ -45,7 +45,7 @@ export default function PanaderiaCarlitaWeb() {
   id: 'rosca-dulce',
   nombre: 'Rosca dulce',
   variantes: [
-    { nombre: 'Unidad', precio: 5000 }
+    { nombre: 'Unidad', precio: 9500 }
   ],
   descripcion: 'Rosca esponjosa y dulce, ideal para compartir en familia.',
   frase: 'Un clásico de fechas especiales.',
@@ -68,18 +68,18 @@ export default function PanaderiaCarlitaWeb() {
   id: 'pan-lenteja',
   nombre: 'Pan de lenteja',
   variantes: [
-    { nombre: 'Unidad', precio: 1500 }
+    { nombre: 'Unidad', precio: 4500 }
   ],
-  descripcion: 'Pan saludable hecho a base de lentejas, sin harina, ideal para una alimentación más liviana.',
+  descripcion: 'Pan saludable hecho a base de lentejas, sin harina, ideal para una alimentación más liviana. Molde 25cm',
   frase: 'Rico, nutritivo y apto para todos.',
   imagen: '/productos/pan-lenteja.jpeg',
   ingredientes: 'Lentejas, huevos, condimentos naturales.',
 },
     {
       id: 'Pan de molde con relleno',
-      nombre: 'Budín de pan salado',
+      nombre: 'Pan de molde con relleno',
       variantes: [{ nombre: 'Unidad', precio: 7000 }],
-      descripcion: 'Ideal para reuniones, picadas o para tener algo rico y práctico en casa.',
+      descripcion: 'Ideal para reuniones, picadas o para tener algo rico y práctico en casa. Molde de 25cm',
       frase: 'Sabor casero que llena la mesa.',
       imagen: '/productos/budin-pan-salado.jpg',
       ingredientes: 'Harina 0000, huevos, manteca, leche, quesos, jamón.',
