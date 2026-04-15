@@ -105,7 +105,7 @@ export default function PanaderiaCarlitaWeb() {
   ],
   descripcion: 'Torta suave y cremosa, ideal para los amantes del queso. Molde mediano',
   frase: 'Un postre irresistible.',
-  imagen: '/productos/torta-queso.jpg',
+  imagen: '/productos/masa-filo-pollo.jpeg' ,
   ingredientes: 'Harina leudante, polvo de hornear, leche, manteca, sal, huevos y queso.',
 },
 {
