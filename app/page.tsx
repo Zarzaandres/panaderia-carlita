@@ -105,14 +105,14 @@ export default function PanaderiaCarlitaWeb() {
   ],
   descripcion: 'Torta suave y cremosa, ideal para los amantes del queso. Molde mediano',
   frase: 'Un postre irresistible.',
-  imagen: '/productos/masa-filo-pollo.jpeg' ,
+  imagen: '/productos/torta-queso.jpg' ,
   ingredientes: 'Harina leudante, polvo de hornear, leche, manteca, sal, huevos y queso.',
 },
 {
   id: 'masa-filo-pollo',
   nombre: 'Masa filo rellena de pollo',
   descripcion: 'Crujientes bocados de masa filo rellenos de pollo, ideales para compartir 🤤',
-  imagen: '/masa-filo-pollo.jpg',
+  imagen: '/masa-filo-pollo.jpeg',
   variantes: [
     { nombre: 'Media docena', precio: 6000 },
     { nombre: 'Docena', precio: 11000 },
