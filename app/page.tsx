@@ -112,7 +112,7 @@ export default function PanaderiaCarlitaWeb() {
   id: 'masa-filo-pollo',
   nombre: 'Masa filo rellena de pollo',
   descripcion: 'Crujientes bocados de masa filo rellenos de pollo, ideales para compartir 🤤',
-  imagen: '/masa-filo-pollo.jpeg',
+  imagen: '/productos/masa-filo-pollo.jpeg',
   variantes: [
     { nombre: 'Media docena', precio: 6000 },
     { nombre: 'Docena', precio: 11000 },
