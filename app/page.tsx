@@ -108,6 +108,16 @@ export default function PanaderiaCarlitaWeb() {
   imagen: '/productos/torta-queso.jpg',
   ingredientes: 'Harina leudante, polvo de hornear, leche, manteca, sal, huevos y queso.',
 },
+{
+  id: 'masa-filo-pollo',
+  nombre: 'Masa filo rellena de pollo',
+  descripcion: 'Crujientes bocados de masa filo rellenos de pollo, ideales para compartir 🤤',
+  imagen: '/masa-filo-pollo.jpg',
+  variantes: [
+    { nombre: 'Media docena', precio: 6000 },
+    { nombre: 'Docena', precio: 11000 },
+  ],
+},
   ];
 
   const [nombre, setNombre] = useState('');
