@@ -41,7 +41,7 @@ export default function PanaderiaCarlitaWeb() {
       imagen: '/productos/caras-sucias.jpg',
       ingredientes: 'Harina 0000, manteca, sal, levadura fresca, extracto malta, azucar negra, harina 000.',
     },
-    {
+   /* {
   id: 'rosca-dulce',
   nombre: 'Rosca dulce',
   variantes: [
@@ -74,7 +74,7 @@ export default function PanaderiaCarlitaWeb() {
   frase: 'Rico, nutritivo y apto para todos.',
   imagen: '/productos/pan-lenteja.jpeg',
   ingredientes: 'Lentejas, huevos, condimentos naturales.',
-},
+},*/
     {
       id: 'Pan de molde con relleno',
       nombre: 'Pan de molde con relleno',
@@ -154,7 +154,7 @@ const fechaMinima = hoy.toISOString().split('T')[0];
     `Cantidad: ${cantidad}`,
     `Fecha deseada: ${fecha || '-'}`,
     
-    `Entrega: Por la tarde (17:00 a 20:00)`,
+   
     
     `Nota adicional: ${nota || '-'}`,
     '',
@@ -176,7 +176,7 @@ return (
             Realizá tu pedido por WhatsApp y coordinamos la entrega.
           </p>
           <p className="text-stone-600 mt-2">
-Trabajamos por pedidos y realizamos entregas dentro de la franja horaria de la tarde.
+Trabajamos por pedidos y realizamos entregas dentro de la franja horaria.
 </p>
 
 <div className="mt-4 flex justify-start gap-3 text-sm text-stone-700">
