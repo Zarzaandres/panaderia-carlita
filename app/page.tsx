@@ -118,7 +118,7 @@ export default function PanaderiaCarlitaWeb() {
   imagen: '/productos/torta-queso.jpg' ,
   ingredientes: 'Harina leudante, polvo de hornear, leche, manteca, sal, huevos y queso.',
 },
-{
+/*{
   id: 'masa-filo-pollo',
   nombre: 'Masa filo rellena de pollo',
   descripcion: 'Crujientes bocados de masa filo rellenos de pollo, ideales para compartir 🤤',
@@ -127,7 +127,7 @@ export default function PanaderiaCarlitaWeb() {
     { nombre: 'Media docena', precio: 6000 },
     { nombre: 'Docena', precio: 11000 },
   ],
-},
+},*/
   ];
 
   const [nombre, setNombre] = useState('');
@@ -181,7 +181,7 @@ return (
           <p className="text-sm font-medium uppercase tracking-[0.2em] text-amber-800">Panadería artesanal</p>
           <h1 className="mt-3 text-4xl font-bold md:text-6xl">Panadería Carlita</h1>
           <p className="mt-4 max-w-2xl text-base md:text-lg text-stone-700">
-            Panadería por pedidos, hecha en casa con dedicación. 
+            Panadería digital, hecha en casa con dedicación. 
             Cada producto se prepara especialmente para vos 💛 
             Realizá tu pedido por WhatsApp y coordinamos la entrega.
           </p>
