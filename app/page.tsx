@@ -138,7 +138,7 @@ export default function PanaderiaCarlitaWeb() {
   const [fecha, setFecha] = useState('');
   const [nota, setNota] = useState('');
 const hoy = new Date();
-hoy.setDate(hoy.getDate() + 2);
+hoy.setDate(hoy.getDate() + 0);
 
 const fechaMinima = hoy.toISOString().split('T')[0];
   const productoSeleccionado = useMemo(
