@@ -74,7 +74,17 @@ export default function PanaderiaCarlitaWeb() {
   frase: 'Rico, nutritivo y apto para todos.',
   imagen: '/productos/pan-lenteja.jpeg',
   ingredientes: 'Lentejas, huevos, condimentos naturales.',
-},*/
+},*/{
+  id: 'pan-cremona',
+  nombre: 'Pan cremona',
+  variantes: [
+    { nombre: 'Unidad', precio: 2500 },
+  ],
+  descripcion: 'Pan clásico de panadería, crocante por fuera y suave por dentro, ideal para acompañar el mate.',
+  frase: 'Simple, rico y bien tradicional.',
+  imagen: '/productos/pan-cremona.jpg',
+  ingredientes: 'Harina 000, grasa o manteca, sal, levadura y agua.',
+},
     {
       id: 'Pan de molde con relleno',
       nombre: 'Pan de molde con relleno',
