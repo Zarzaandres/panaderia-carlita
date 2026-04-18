@@ -78,7 +78,7 @@ export default function PanaderiaCarlitaWeb() {
   id: 'pan-cremona',
   nombre: 'Pan cremona',
   variantes: [
-    { nombre: 'Unidad', precio: 2500 },
+    { nombre: 'Unidad', precio: 3500 },
   ],
   descripcion: 'Pan clásico de panadería, crocante por fuera y suave por dentro, ideal para acompañar el mate.',
   frase: 'Simple, rico y bien tradicional.',
