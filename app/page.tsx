@@ -27,7 +27,7 @@ export default function PanaderiaCarlitaWeb() {
       descripcion: 'Variedad de facturas artesanales para desayunos, meriendas y reuniones.',
       frase: 'Perfectas para compartir en familia.',
       imagen: '/productos/facturas.jpeg',
-      ingredientes: 'Harina 0000, levadura seca, leche, huevo, azucar, manteca, esencia de vainilla, dulce de leche, membrillo, coco rallado.',
+      ingredientes: 'Harina 0000, levadura, leche, huevo, azucar, manteca, esencia de vainilla, dulce de leche, membrillo, crema pastelera,coco rallado.',
     },
     {
       id: 'cara-sucia',
@@ -83,7 +83,7 @@ export default function PanaderiaCarlitaWeb() {
   descripcion: 'Pan clásico de panadería, crocante por fuera y suave por dentro, ideal para acompañar el mate.',
   frase: 'Simple, rico y bien tradicional.',
   imagen: '/productos/pan-cremona.jpg',
-  ingredientes: 'Harina 000, estracto de malta, grasa, sal, levadura y margarina.',
+  ingredientes: 'Harina 0000, estracto de malta, grasa vacuna, sal, levadura y margarina hojaldre.',
 },
     {
       id: 'Pan de molde con relleno',
