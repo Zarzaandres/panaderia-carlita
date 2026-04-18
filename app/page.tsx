@@ -83,7 +83,7 @@ export default function PanaderiaCarlitaWeb() {
   descripcion: 'Pan clásico de panadería, crocante por fuera y suave por dentro, ideal para acompañar el mate.',
   frase: 'Simple, rico y bien tradicional.',
   imagen: '/productos/pan-cremona.jpg',
-  ingredientes: 'Harina 000, estracto de malta, sal, levadura y agua.',
+  ingredientes: 'Harina 000, estracto de malta, grasa, sal, levadura y margarina.',
 },
     {
       id: 'Pan de molde con relleno',
