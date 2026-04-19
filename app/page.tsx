@@ -131,7 +131,12 @@ export default function PanaderiaCarlitaWeb() {
   ];
 
   const [nombre, setNombre] = useState('');
-  const [carrito, setCarrito] = useState([]);
+const [carrito, setCarrito] = useState<{
+  producto: string;
+  variante: string;
+  cantidad: number;
+  precio: number;
+}[]>([]);
   const [telefono, setTelefono] = useState('');
   const [productoId, setProductoId] = useState(productos[0].id);
   const [varianteNombre, setVarianteNombre] = useState(productos[0].variantes[0].nombre);
