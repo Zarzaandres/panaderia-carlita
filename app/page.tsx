@@ -190,27 +190,45 @@ const fechaMinima = hoy.toISOString().split('T')[0];
 
 return (
     <div className="min-h-screen bg-amber-50 text-stone-800">
-      <header className="bg-gradient-to-r from-amber-200 to-orange-100 shadow-sm">
-        <div className="mx-auto max-w-6xl px-6 py-10">
-          <p className="text-sm font-medium uppercase tracking-[0.2em] text-amber-800">Panadería artesanal</p>
-          <h1 className="mt-3 text-4xl font-bold md:text-6xl">Panadería Carlita</h1>
-          <p className="mt-4 max-w-2xl text-base md:text-lg text-stone-700">
-            Panadería digital, hecha en casa con dedicación. 
-            Cada producto se prepara especialmente para vos 💛 
-            Realizá tu pedido por WhatsApp y coordinamos la entrega.
+
+  <header className="bg-gradient-to-r from-amber-200 to-orange-100 shadow-sm">
+    <div className="mx-auto max-w-6xl px-6 py-10">
+
+      <div className="flex items-center gap-4">
+        <img 
+          src="/logo.png" 
+          alt="Panadería Carlita" 
+          className="w-20 h-20 object-contain drop-shadow-md"
+        />
+
+        <div>
+          <p className="text-sm font-medium uppercase tracking-[0.2em] text-amber-800">
+            Panadería artesanal
           </p>
-          <p className="text-stone-600 mt-2">
-Trabajamos por pedidos y realizamos entregas dentro de la franja horaria.
-</p>
-
-
-          <a
-            href="#pedido"
-            className="mt-6 inline-block rounded-2xl bg-stone-900 px-6 py-3 text-white shadow hover:scale-[1.02] transition"
-          >
-            Hacer pedido
-          </a>
+          <h1 className="text-3xl md:text-5xl font-bold">
+            Panadería Carlita
+          </h1>
         </div>
+      </div>
+
+      <p className="mt-4 max-w-2xl text-base md:text-lg text-stone-700">
+        Panadería digital, hecha en casa con dedicación. 
+        Cada producto se prepara especialmente para vos 💛 
+        Realizá tu pedido por WhatsApp y coordinamos la entrega.
+      </p>
+
+      <p className="text-stone-600 mt-2">
+        Trabajamos por pedidos y realizamos entregas dentro de la franja horaria.
+      </p>
+
+      <a
+        href="#pedido"
+        className="mt-6 inline-block rounded-2xl bg-stone-900 px-6 py-3 text-white shadow hover:scale-[1.02] transition"
+      >
+        Hacer pedido
+      </a>
+
+    </div>
       </header>
 
       <main className="mx-auto max-w-6xl px-6 py-12">
