@@ -196,7 +196,7 @@ return (
 
       <div className="flex items-center gap-4">
         <img 
-          src="/logo.png" 
+          src="/productos/logo.jpg" 
           alt="Panadería Carlita" 
           className="w-20 h-20 object-contain drop-shadow-md"
         />
