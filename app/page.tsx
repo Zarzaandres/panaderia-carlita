@@ -15,7 +15,7 @@ export default function PanaderiaCarlitaWeb() {
       descripcion: 'Suaves, rellenos y bien caseros, ideales para acompañar el mate o regalar.',
       frase: 'Un clásico dulce que siempre queda bien.',
       imagen: '/productos/alfajores.jpg',
-      ingredientes: 'Pendiente de agregar ingredientes.',
+      ingredientes: 'Harina leudante, maicena, huevo, margarina, azucar, dulce de leche, coco rayado.',
     },
     {
       id: 'facturas-surtidas',
@@ -131,6 +131,7 @@ export default function PanaderiaCarlitaWeb() {
   ];
 
   const [nombre, setNombre] = useState('');
+  const [carrito, setCarrito] = useState([]);
   const [telefono, setTelefono] = useState('');
   const [productoId, setProductoId] = useState(productos[0].id);
   const [varianteNombre, setVarianteNombre] = useState(productos[0].variantes[0].nombre);
@@ -151,7 +152,9 @@ const fechaMinima = hoy.toISOString().split('T')[0];
     [productoSeleccionado, varianteNombre]
   );
 
-  const total = (varianteSeleccionada?.precio || 0) * Number(cantidad || 0);
+  const total = carrito.reduce((acc, item) => {
+  return acc + item.precio * item.cantidad;
+}, 0);
 
  const Whatsapp = useMemo(() => {
   const lineas = [
@@ -159,9 +162,11 @@ const fechaMinima = hoy.toISOString().split('T')[0];
     '',
     `Nombre: ${nombre || '-'}`,
     `Teléfono: ${telefono || '-'}`,
-    `Producto: ${productoSeleccionado.nombre}`,
-    `Variante: ${varianteSeleccionada.nombre}`,
-    `Cantidad: ${cantidad}`,
+    'Pedido:',
+...carrito.map(
+  (item) =>
+    `• ${item.producto} - ${item.variante} x${item.cantidad}`
+),
     `Fecha deseada: ${fecha || '-'}`,
     
    
@@ -300,7 +305,35 @@ Trabajamos por pedidos y realizamos entregas dentro de la franja horaria.
         className="w-full rounded-2xl border border-stone-300 px-4 py-3 outline-none"
       />
     </div>
+<button
+  onClick={() => {
+    setCarrito([
+      ...carrito,
+      {
+        producto: productoSeleccionado.nombre,
+        variante: varianteSeleccionada.nombre,
+        cantidad: cantidad,
+        precio: varianteSeleccionada.precio,
+      },
+    ]);
+  }}
+  className="mt-4 rounded-xl bg-amber-500 px-4 py-2 text-white"
+>
+  Agregar al pedido
+</button>
+<div className="mt-4">
+  <p className="font-semibold">Tu pedido:</p>
 
+  {carrito.length === 0 && (
+    <p className="text-sm text-stone-500">No agregaste productos todavía</p>
+  )}
+
+  {carrito.map((item, index) => (
+    <div key={index} className="text-sm">
+      • {item.producto} - {item.variante} x{item.cantidad}
+    </div>
+  ))}
+</div>
     <div>
       <label className="mb-2 block text-sm font-medium">Fecha deseada</label>
       <input 
@@ -334,7 +367,11 @@ Trabajamos por pedidos y realizamos entregas dentro de la franja horaria.
       <p className="mt-2 text-2xl font-bold">${total.toLocaleString('es-AR')}</p>
     </div>
   </div>
-
+ {carrito.length === 0 && (
+  <p className="text-red-500 mt-4">
+    Agregá al menos un producto antes de enviar el pedido
+  </p>
+)}
   <a
   href={`https://wa.me/${whatsappNumero}?text=${Whatsapp}`}
   target="_blank"
