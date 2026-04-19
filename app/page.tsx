@@ -137,6 +137,10 @@ const [carrito, setCarrito] = useState<{
   cantidad: number;
   precio: number;
 }[]>([]);
+const eliminarProducto = (index: number) => {
+  const nuevoCarrito = carrito.filter((_, i) => i !== index);
+  setCarrito(nuevoCarrito);
+};
   const [telefono, setTelefono] = useState('');
   const [productoId, setProductoId] = useState(productos[0].id);
   const [varianteNombre, setVarianteNombre] = useState(productos[0].variantes[0].nombre);
@@ -333,11 +337,23 @@ Trabajamos por pedidos y realizamos entregas dentro de la franja horaria.
     <p className="text-sm text-stone-500">No agregaste productos todavía</p>
   )}
 
-  {carrito.map((item, index) => (
-    <div key={index} className="text-sm">
-      • {item.producto} - {item.variante} x{item.cantidad}
-    </div>
-  ))}
+{carrito.map((item, index) => (
+  <div
+    key={index}
+    className="flex justify-between items-center text-sm bg-amber-50 px-3 py-2 rounded-xl mt-2"
+  >
+    <span>
+      {item.producto} - {item.variante} x{item.cantidad}
+    </span>
+
+    <button
+      onClick={() => eliminarProducto(index)}
+      className="text-red-500 hover:text-red-700 font-bold ml-3"
+    >
+      ❌
+    </button>
+  </div>
+))}
 </div>
     <div>
       <label className="mb-2 block text-sm font-medium">Fecha deseada</label>
