@@ -198,7 +198,7 @@ return (
         <img 
           src="/productos/logo.jpg" 
           alt="Panadería Carlita" 
-          className="w-20 h-20 object-contain drop-shadow-md"
+          className="w-20 h-20 object-contain drop-shadow-lg"
         />
 
         <div>
