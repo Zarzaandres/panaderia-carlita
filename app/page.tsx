@@ -162,11 +162,6 @@ const fechaMinima = hoy.toISOString().split('T')[0];
     [productoSeleccionado, varianteNombre]
   );
 
-  const total = carrito.reduce((acc, item) => {
-  return acc + item.precio * item.cantidad;
-}, 0);
-
-
 const [carrito, setCarrito] = useState<any[]>([]);
 const agregarAlCarrito = (producto) => {
   setCarrito([...carrito, {
