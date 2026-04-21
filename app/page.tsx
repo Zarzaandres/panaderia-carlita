@@ -167,8 +167,7 @@ const fechaMinima = hoy.toISOString().split('T')[0];
 }, 0);
 
 
-const [carrito, setCarrito] = useState([]);
-
+const [carrito, setCarrito] = useState<any[]>([]);
 const agregarAlCarrito = (producto) => {
   setCarrito([...carrito, {
     nombre: producto.nombre,
