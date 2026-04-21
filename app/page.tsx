@@ -16,6 +16,7 @@ export default function PanaderiaCarlitaWeb() {
       frase: 'Un clásico dulce que siempre queda bien.',
       imagen: '/productos/alfajores.jpg',
       ingredientes: 'Harina leudante, maicena, huevo, margarina, azucar, dulce de leche, coco rayado.',
+     
     },
     {
       id: 'facturas-surtidas',
@@ -167,11 +168,21 @@ const fechaMinima = hoy.toISOString().split('T')[0];
 
  const Whatsapp = useMemo(() => {
   const lineas = [
-    'Hola, quiero hacer un pedido en Panadería Carlita.',
+    'Hola! Quiero hacer un pedido 😊',
     '',
-    `Nombre: ${nombre || '-'}`,
-    `Teléfono: ${telefono || '-'}`,
-    'Pedido:',
+    '🧾 Pedido:',
+    ...carrito.map(item => `- ${item.nombre} x${item.cantidad}`),
+    '',
+    `📅 Fecha: ${fecha || '-'}`,
+    '',
+    `👤 Nombre: ${nombre || '-'}`,
+    `📞 Teléfono: ${telefono || '-'}`,
+    '',
+    `💰 Total: $${total.toLocaleString('es-AR')}`,
+  ];
+
+  return encodeURIComponent(lineas.join('\n'));
+}, [carrito, fecha, nombre, telefono, total]);
 ...carrito.map(
   (item) =>
     `• ${item.producto} - ${item.variante} x${item.cantidad}`
@@ -187,6 +198,15 @@ const fechaMinima = hoy.toISOString().split('T')[0];
 
   return encodeURIComponent(lineas.join('\n'));
 }, [nombre, telefono, productoSeleccionado, varianteSeleccionada, cantidad, fecha, nota, total]);
+const [carrito, setCarrito] = useState([]);
+
+const agregarAlCarrito = (producto) => {
+  setCarrito([...carrito, {
+    nombre: producto.nombre,
+    precio: producto.variantes[0].precio,
+    cantidad: 1
+  }]);
+};
 
 return (
     <div className="min-h-screen bg-amber-50 text-stone-800">
@@ -259,6 +279,12 @@ return (
                   <div className="mt-4 rounded-2xl bg-stone-50 p-4 text-sm text-stone-600">
                     <p className="font-semibold text-stone-800">Ingredientes</p>
                     <p className="mt-1">{producto.ingredientes}</p>
+                    <button
+  onClick={() => agregarAlCarrito(producto)}
+  className="mt-4 w-full bg-amber-500 text-white py-2 rounded-xl hover:bg-amber-600 transition"
+>
+  Agregar al pedido
+</button>
                   </div>
                 </div>
               </div>
