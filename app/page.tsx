@@ -131,48 +131,58 @@ export default function PanaderiaCarlitaWeb() {
 },*/
   ];
 
-  const [nombre, setNombre] = useState('');
+// ================== ESTADOS ==================
+const [nombre, setNombre] = useState('');
+const [telefono, setTelefono] = useState('');
+const [fecha, setFecha] = useState('');
+const [nota, setNota] = useState('');
+
+// 🧾 CARRITO
 const [carrito, setCarrito] = useState<{
-  producto: string;
-  variante: string;
-  cantidad: number;
+  nombre: string;
   precio: number;
+  cantidad: number;
 }[]>([]);
-const eliminarProducto = (index: number) => {
-  const nuevoCarrito = carrito.filter((_, i) => i !== index);
-  setCarrito(nuevoCarrito);
-};
-  const [telefono, setTelefono] = useState('');
-  const [productoId, setProductoId] = useState(productos[0].id);
-  const [varianteNombre, setVarianteNombre] = useState(productos[0].variantes[0].nombre);
-  const [cantidad, setCantidad] = useState(1);
-  const [fecha, setFecha] = useState('');
-  const [nota, setNota] = useState('');
+
+// ================== FECHA ==================
 const hoy = new Date();
-hoy.setDate(hoy.getDate() + 0);
+hoy.setDate(hoy.getDate());
 
 const fechaMinima = hoy.toISOString().split('T')[0];
-  const productoSeleccionado = useMemo(
-    () => productos.find((p) => p.id === productoId) || productos[0],
-    [productoId]
-  );
 
-  const varianteSeleccionada = useMemo(
-    () => productoSeleccionado.variantes.find((v) => v.nombre === varianteNombre) || productoSeleccionado.variantes[0],
-    [productoSeleccionado, varianteNombre]
-  );
-
-const [carrito, setCarrito] = useState<any[]>([]);
+// ================== AGREGAR ==================
 const agregarAlCarrito = (producto) => {
-  setCarrito([...carrito, {
-    nombre: producto.nombre,
-    precio: producto.variantes[0].precio,
-    cantidad: 1
-  }]);
+  const existe = carrito.find(item => item.nombre === producto.nombre);
+
+  if (existe) {
+    setCarrito(carrito.map(item =>
+      item.nombre === producto.nombre
+        ? { ...item, cantidad: item.cantidad + 1 }
+        : item
+    ));
+  } else {
+    setCarrito([
+      ...carrito,
+      {
+        nombre: producto.nombre,
+        precio: producto.variantes[0].precio,
+        cantidad: 1,
+      },
+    ]);
+  }
 };
+
+// ================== ELIMINAR ==================
+const eliminarProducto = (index: number) => {
+  setCarrito(carrito.filter((_, i) => i !== index));
+};
+
+// ================== TOTAL ==================
 const total = carrito.reduce((acc, item) => {
   return acc + item.precio * item.cantidad;
 }, 0);
+
+// ================== WHATSAPP ==================
 const Whatsapp = useMemo(() => {
   const lineas = [
     'Hola! Quiero hacer un pedido 😊',
@@ -182,6 +192,8 @@ const Whatsapp = useMemo(() => {
     '',
     `📅 Fecha: ${fecha || '-'}`,
     '',
+    `📝 Nota: ${nota || '-'}`,
+    '',
     `👤 Nombre: ${nombre || '-'}`,
     `📞 Teléfono: ${telefono || '-'}`,
     '',
@@ -189,7 +201,7 @@ const Whatsapp = useMemo(() => {
   ];
 
   return encodeURIComponent(lineas.join('\n'));
-}, [carrito, fecha, nombre, telefono, total]);
+}, [carrito, fecha, nota, nombre, telefono, total]);
 
 return (
     <div className="min-h-screen bg-amber-50 text-stone-800">
