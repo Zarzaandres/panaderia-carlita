@@ -166,12 +166,25 @@ const fechaMinima = hoy.toISOString().split('T')[0];
   return acc + item.precio * item.cantidad;
 }, 0);
 
- const Whatsapp = useMemo(() => {
+
+const [carrito, setCarrito] = useState([]);
+
+const agregarAlCarrito = (producto) => {
+  setCarrito([...carrito, {
+    nombre: producto.nombre,
+    precio: producto.variantes[0].precio,
+    cantidad: 1
+  }]);
+};
+const total = carrito.reduce((acc, item) => {
+  return acc + item.precio * item.cantidad;
+}, 0);
+const Whatsapp = useMemo(() => {
   const lineas = [
     'Hola! Quiero hacer un pedido 😊',
     '',
     '🧾 Pedido:',
-    ...carrito.map(item => `- ${item.nombre} x${item.cantidad}`),
+    ...carrito.map(item => `• ${item.nombre} x${item.cantidad} - $${item.precio}`),
     '',
     `📅 Fecha: ${fecha || '-'}`,
     '',
@@ -183,30 +196,6 @@ const fechaMinima = hoy.toISOString().split('T')[0];
 
   return encodeURIComponent(lineas.join('\n'));
 }, [carrito, fecha, nombre, telefono, total]);
-...carrito.map(
-  (item) =>
-    `• ${item.producto} - ${item.variante} x${item.cantidad}`
-),
-    `Fecha deseada: ${fecha || '-'}`,
-    
-   
-    
-    `Nota adicional: ${nota || '-'}`,
-    '',
-    `Total estimado: $${total.toLocaleString('es-AR')}`,
-  ];
-
-  return encodeURIComponent(lineas.join('\n'));
-}, [nombre, telefono, productoSeleccionado, varianteSeleccionada, cantidad, fecha, nota, total]);
-const [carrito, setCarrito] = useState([]);
-
-const agregarAlCarrito = (producto) => {
-  setCarrito([...carrito, {
-    nombre: producto.nombre,
-    precio: producto.variantes[0].precio,
-    cantidad: 1
-  }]);
-};
 
 return (
     <div className="min-h-screen bg-amber-50 text-stone-800">
