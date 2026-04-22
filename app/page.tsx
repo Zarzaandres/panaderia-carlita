@@ -312,111 +312,91 @@ return (
 
     <div>
       <label className="mb-2 block text-sm font-medium">Producto</label>
-      <select
-        value={productoId}
-        onChange={(e) => {
-          const nuevo = productos.find((p) => p.id === e.target.value);
-          setProductoId(e.target.value);
-          setVarianteNombre(nuevo?.variantes[0]?.nombre || '');
-        }}
-        className="w-full rounded-2xl border border-stone-300 px-4 py-3 outline-none"
+      <section id="pedido" className="mt-16 rounded-3xl bg-white p-8 shadow-sm border border-amber-100">
+  <h2 className="text-3xl font-bold">Formulario de pedido</h2>
+
+  <p className="text-sm text-stone-500 mt-2">
+    Trabajamos por pedidos con al menos 24hs de anticipación 💛
+  </p>
+
+  <p className="mt-2 text-stone-600">
+    Agregá productos arriba y completá tus datos.
+  </p>
+
+  {/* 🛒 CARRITO */}
+  <div className="mt-6">
+    <p className="font-semibold text-lg">🛒 Tu pedido</p>
+
+    {carrito.length === 0 && (
+      <p className="text-sm text-stone-500 mt-2">
+        No agregaste productos todavía
+      </p>
+    )}
+
+    {carrito.map((item, index) => (
+      <div
+        key={index}
+        className="flex justify-between items-center text-sm bg-amber-50 px-4 py-2 rounded-xl mt-2"
       >
-        {productos.map((producto) => (
-          <option key={producto.id} value={producto.id}>
-            {producto.nombre}
-          </option>
-        ))}
-      </select>
-    </div>
+        <span>
+          {item.nombre} x{item.cantidad}
+        </span>
+
+        <button
+          onClick={() => eliminarProducto(index)}
+          className="text-red-500 hover:text-red-700 font-bold"
+        >
+          ❌
+        </button>
+      </div>
+    ))}
+  </div>
+
+  {/* 👤 DATOS */}
+  <div className="mt-8 grid gap-6 md:grid-cols-2">
 
     <div>
-      <label className="mb-2 block text-sm font-medium">Presentación</label>
-      <select
-        value={varianteNombre}
-        onChange={(e) => setVarianteNombre(e.target.value)}
-        className="w-full rounded-2xl border border-stone-300 px-4 py-3 outline-none"
-      >
-        {productoSeleccionado.variantes.map((variante) => (
-          <option key={variante.nombre} value={variante.nombre}>
-            {variante.nombre} - ${variante.precio.toLocaleString('es-AR')}
-          </option>
-        ))}
-      </select>
-    </div>
-
-    <div>
-      <label className="mb-2 block text-sm font-medium">Cantidad</label>
+      <label className="mb-2 block text-sm font-medium">Nombre</label>
       <input
-        type="number"
-        min="1"
-        value={cantidad}
-        onChange={(e) => setCantidad(Number(e.target.value))}
-        className="w-full rounded-2xl border border-stone-300 px-4 py-3 outline-none"
+        value={nombre}
+        onChange={(e) => setNombre(e.target.value)}
+        className="w-full rounded-2xl border border-stone-300 px-4 py-3"
       />
     </div>
-<button
-  onClick={() => {
-    setCarrito([
-      ...carrito,
-      {
-        producto: productoSeleccionado.nombre,
-        variante: varianteSeleccionada.nombre,
-        cantidad: cantidad,
-        precio: varianteSeleccionada.precio,
-      },
-    ]);
-  }}
-  className="mt-4 rounded-xl bg-amber-500 px-4 py-2 text-white"
->
-  Agregar al pedido
-</button>
-<div className="mt-4">
-  <p className="font-semibold">Tu pedido:</p>
 
-  {carrito.length === 0 && (
-    <p className="text-sm text-stone-500">No agregaste productos todavía</p>
-  )}
+    <div>
+      <label className="mb-2 block text-sm font-medium">Teléfono</label>
+      <input
+        value={telefono}
+        onChange={(e) => setTelefono(e.target.value)}
+        className="w-full rounded-2xl border border-stone-300 px-4 py-3"
+      />
+    </div>
 
-{carrito.map((item, index) => (
-  <div
-    key={index}
-    className="flex justify-between items-center text-sm bg-amber-50 px-3 py-2 rounded-xl mt-2"
-  >
-    <span>
-      {item.producto} - {item.variante} x{item.cantidad}
-    </span>
-
-    <button
-      onClick={() => eliminarProducto(index)}
-      className="text-red-500 hover:text-red-700 font-bold ml-3"
-    >
-      ❌
-    </button>
-  </div>
-))}
-</div>
     <div>
       <label className="mb-2 block text-sm font-medium">Fecha deseada</label>
-      <input 
-        value={fecha} 
+      <input
+        value={fecha}
         min={fechaMinima}
-        onChange={(e) => setFecha(e.target.value)} 
-        type="date" 
-        className="w-full rounded-2xl border border-stone-300 px-4 py-3 outline-none" 
+        onChange={(e) => setFecha(e.target.value)}
+        type="date"
+        className="w-full rounded-2xl border border-stone-300 px-4 py-3"
       />
     </div>
 
   </div>
 
+  {/* 📝 NOTA */}
   <div className="mt-6">
     <label className="mb-2 block text-sm font-medium">Nota adicional</label>
     <textarea
       value={nota}
       onChange={(e) => setNota(e.target.value)}
-      className="min-h-[120px] w-full rounded-2xl border border-stone-300 px-4 py-3 outline-none"
+      className="min-h-[120px] w-full rounded-2xl border border-stone-300 px-4 py-3"
     />
   </div>
 
+  {/* 💰 TOTAL */}
   <div className="mt-8 grid gap-4 md:grid-cols-2">
     <div className="rounded-2xl bg-amber-50 p-5 text-stone-700">
       <p className="font-semibold">WhatsApp de pedidos</p>
@@ -425,22 +405,28 @@ return (
 
     <div className="rounded-2xl bg-stone-900 p-5 text-white">
       <p className="font-semibold">Total estimado</p>
-      <p className="mt-2 text-2xl font-bold">${total.toLocaleString('es-AR')}</p>
+      <p className="mt-2 text-2xl font-bold">
+        ${total.toLocaleString('es-AR')}
+      </p>
     </div>
   </div>
- {carrito.length === 0 && (
-  <p className="text-red-500 mt-4">
-    Agregá al menos un producto antes de enviar el pedido
-  </p>
-)}
+
+  {/* ⚠️ VALIDACIÓN */}
+  {carrito.length === 0 && (
+    <p className="text-red-500 mt-4">
+      Agregá al menos un producto antes de enviar el pedido
+    </p>
+  )}
+
+  {/* 📲 BOTÓN WHATSAPP */}
   <a
-  href={`https://wa.me/${whatsappNumero}?text=${Whatsapp}`}
-  target="_blank"
-  rel="noreferrer"
-  className="mt-6 inline-block rounded-2xl bg-green-600 px-6 py-3 font-medium text-white shadow hover:scale-[1.02] transition"
->
-  Enviar pedido por WhatsApp
-</a>
+    href={`https://wa.me/${whatsappNumero}?text=${Whatsapp}`}
+    target="_blank"
+    rel="noreferrer"
+    className="mt-6 inline-block rounded-2xl bg-green-600 px-6 py-3 font-medium text-white shadow hover:scale-[1.02] transition"
+  >
+    Enviar pedido por WhatsApp
+  </a>
 
 </section>
        </main>
