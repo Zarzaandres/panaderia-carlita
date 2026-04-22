@@ -184,7 +184,7 @@ export default function PanaderiaCarlitaWeb() {
             <img
               src="/productos/logo.jpg"
               alt="Panadería Carlita"
-              className="w-20 h-20 object-contain drop-shadow-lg rounded-full"
+              className="w-40 h-40 object-contain drop-shadow-lg rounded-full"
             />
             <div>
               <p className="text-sm font-medium uppercase tracking-widest text-amber-800">
