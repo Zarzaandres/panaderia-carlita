@@ -345,38 +345,6 @@ return (
           
 
 ...
-
-<select
-  className="w-full mt-3 border rounded-xl px-3 py-2"
-  value={seleccion[producto.id] ?? 0}
-  onChange={(e) =>
-    setSeleccion({
-      ...seleccion,
-      [producto.id]: Number(e.target.value),
-    })
-  }
->
-  {producto.variantes.map((v, i) => (
-    <option key={i} value={i}>
-      {v.nombre} - ${v.precio.toLocaleString('es-AR')}
-    </option>
-  ))}
-</select>
-
-<button
-  onClick={() => {
-    const varianteIndex = seleccion[producto.id] ?? 0;
-    const variante = producto.variantes[varianteIndex];
-
-    agregarAlCarrito({
-      nombre: `${producto.nombre} (${variante.nombre})`,
-      variantes: [{ nombre: variante.nombre, precio: variante.precio }],
-    });
-  }}
-  className="mt-3 w-full bg-amber-500 text-white py-2 rounded-xl"
->
-  Agregar al pedido
-</button>
         </div>
       ))}
     </div>
