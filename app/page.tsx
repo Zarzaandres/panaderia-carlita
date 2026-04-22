@@ -396,7 +396,7 @@ export default function PanaderiaCarlitaWeb() {
                 Alguna aclaración o nota (opcional)
               </label>
               <textarea
-                placeholder="Ej: sin azúcar, para regalo, entrega a domicilio..."
+                placeholder= " Mandame tu direccion o pasamela al whatsapp"
                 value={nota}
                 onChange={(e) => setNota(e.target.value)}
                 rows={3}
