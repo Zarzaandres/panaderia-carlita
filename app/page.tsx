@@ -259,7 +259,7 @@ return (
       </p>
     </div>
 
-    <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+   <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
   {productos.map((producto) => (
     <div
       key={producto.id}
@@ -278,6 +278,7 @@ return (
           “{producto.frase}”
         </p>
 
+        {/* LISTA DE VARIANTES */}
         <div className="mt-4 space-y-2 text-sm text-stone-700">
           {producto.variantes.map((variante) => (
             <div
@@ -292,7 +293,7 @@ return (
           ))}
         </div>
 
-        {/* 👇 ACÁ VA EL SELECT (IMPORTANTE: dentro de este div) */}
+        {/* SELECT (AFUERA DEL MAP) */}
         <select
           className="w-full mt-3 border rounded-xl px-3 py-2"
           value={seleccion[producto.id] ?? 0}
