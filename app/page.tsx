@@ -130,15 +130,11 @@ export default function PanaderiaCarlitaWeb() {
   ],
 },*/
   ];
-  // ================== TIPOS (ARRIBA DE TODO) ==================
+  // 
 type Producto = {
   nombre: string;
   variantes: { nombre: string; precio: number }[];
 };
-
-// ================== COMPONENTE ==================
-
-
   // ================== ESTADOS ==================
   const [nombre, setNombre] = useState('');
   const [telefono, setTelefono] = useState('');
