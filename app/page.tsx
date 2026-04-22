@@ -248,7 +248,7 @@ return (
       </header>
 
       <main className="mx-auto max-w-6xl px-6 py-12">
-        <section>
+        <section id="productos">
           <div className="mb-8">
             <h2 className="text-3xl font-bold">Nuestros productos</h2>
             <p className="mt-2 text-stone-600">Cada producto puede llevar imagen, frase corta e ingredientes.</p>
