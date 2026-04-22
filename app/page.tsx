@@ -130,79 +130,84 @@ export default function PanaderiaCarlitaWeb() {
   ],
 },*/
   ];
-
-// ================== ESTADOS ==================
-const [nombre, setNombre] = useState('');
-const [telefono, setTelefono] = useState('');
-const [fecha, setFecha] = useState('');
-const [nota, setNota] = useState('');
-
-// 🧾 CARRITO
-const [carrito, setCarrito] = useState<{
+  // ================== TIPOS (ARRIBA DE TODO) ==================
+type Producto = {
   nombre: string;
-  precio: number;
-  cantidad: number;
-}[]>([]);
-
-// ================== FECHA ==================
-const hoy = new Date();
-hoy.setDate(hoy.getDate());
-
-const fechaMinima = hoy.toISOString().split('T')[0];
-
-// ================== AGREGAR ==================
-const agregarAlCarrito = (producto) => {
-  const existe = carrito.find(item => item.nombre === producto.nombre);
-
-  if (existe) {
-    setCarrito(carrito.map(item =>
-      item.nombre === producto.nombre
-        ? { ...item, cantidad: item.cantidad + 1 }
-        : item
-    ));
-  } else {
-    setCarrito([
-      ...carrito,
-      {
-        nombre: producto.nombre,
-        precio: producto.variantes[0].precio,
-        cantidad: 1,
-      },
-    ]);
-  }
+  variantes: { nombre: string; precio: number }[];
 };
 
-// ================== ELIMINAR ==================
-const eliminarProducto = (index: number) => {
-  setCarrito(carrito.filter((_, i) => i !== index));
-};
+// ================== COMPONENTE ==================
+export default function PanaderiaCarlitaWeb() {
 
-// ================== TOTAL ==================
-const total = carrito.reduce((acc, item) => {
-  return acc + item.precio * item.cantidad;
-}, 0);
+  // ================== ESTADOS ==================
+  const [nombre, setNombre] = useState('');
+  const [telefono, setTelefono] = useState('');
+  const [fecha, setFecha] = useState('');
+  const [nota, setNota] = useState('');
 
-// ================== WHATSAPP ==================
-const Whatsapp = useMemo(() => {
-  const lineas = [
-    'Hola! Quiero hacer un pedido 😊',
-    '',
-    '🧾 Pedido:',
-    ...carrito.map(item => `• ${item.nombre} x${item.cantidad} - $${item.precio}`),
-    '',
-    `📅 Fecha: ${fecha || '-'}`,
-    '',
-    `📝 Nota: ${nota || '-'}`,
-    '',
-    `👤 Nombre: ${nombre || '-'}`,
-    `📞 Teléfono: ${telefono || '-'}`,
-    '',
-    `💰 Total: $${total.toLocaleString('es-AR')}`,
-  ];
+  // 🧾 CARRITO (UNA SOLA VEZ)
+  const [carrito, setCarrito] = useState<{
+    nombre: string;
+    precio: number;
+    cantidad: number;
+  }[]>([]);
 
-  return encodeURIComponent(lineas.join('\n'));
-}, [carrito, fecha, nota, nombre, telefono, total]);
+  // ================== FECHA ==================
+  const hoy = new Date();
+  const fechaMinima = hoy.toISOString().split('T')[0];
 
+  // ================== AGREGAR ==================
+  const agregarAlCarrito = (producto: Producto) => {
+    const existe = carrito.find(item => item.nombre === producto.nombre);
+
+    if (existe) {
+      setCarrito(carrito.map(item =>
+        item.nombre === producto.nombre
+          ? { ...item, cantidad: item.cantidad + 1 }
+          : item
+      ));
+    } else {
+      setCarrito([
+        ...carrito,
+        {
+          nombre: producto.nombre,
+          precio: producto.variantes[0].precio,
+          cantidad: 1,
+        },
+      ]);
+    }
+  };
+
+  // ================== ELIMINAR ==================
+  const eliminarProducto = (index: number) => {
+    setCarrito(carrito.filter((_, i) => i !== index));
+  };
+
+  // ================== TOTAL ==================
+  const total = carrito.reduce((acc, item) => {
+    return acc + item.precio * item.cantidad;
+  }, 0);
+
+  // ================== WHATSAPP ==================
+  const Whatsapp = useMemo(() => {
+    const lineas = [
+      'Hola! Quiero hacer un pedido 😊',
+      '',
+      '🧾 Pedido:',
+      ...carrito.map(item => `• ${item.nombre} x${item.cantidad} - $${item.precio}`),
+      '',
+      `📅 Fecha: ${fecha || '-'}`,
+      '',
+      `📝 Nota: ${nota || '-'}`,
+      '',
+      `👤 Nombre: ${nombre || '-'}`,
+      `📞 Teléfono: ${telefono || '-'}`,
+      '',
+      `💰 Total: $${total.toLocaleString('es-AR')}`,
+    ];
+
+    return encodeURIComponent(lineas.join('\n'));
+  }, [carrito, fecha, nota, nombre, telefono, total]);
 return (
     <div className="min-h-screen bg-amber-50 text-stone-800">
 
