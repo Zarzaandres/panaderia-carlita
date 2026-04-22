@@ -259,7 +259,7 @@ return (
       </p>
     </div>
 
-   <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+  <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
   {productos.map((producto) => (
     <div
       key={producto.id}
@@ -293,7 +293,7 @@ return (
           ))}
         </div>
 
-        {/* SELECT (AFUERA DEL MAP) */}
+        {/* SELECT (FUERA del map de variantes) */}
         <select
           className="w-full mt-3 border rounded-xl px-3 py-2"
           value={seleccion[producto.id] ?? 0}
