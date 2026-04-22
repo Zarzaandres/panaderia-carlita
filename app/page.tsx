@@ -153,7 +153,7 @@ type Producto = {
   const fechaMinima = hoy.toISOString().split('T')[0];
 
   // ================== AGREGAR ==================
-  const agregarAlCarrito = (producto: Producto) => {
+  const agregarAlCarrito = (producto: any) => {
     const existe = carrito.find(item => item.nombre === producto.nombre);
 
     if (existe) {
@@ -303,7 +303,41 @@ return (
       {carrito.map((item, i) => (
         <div key={i} className="flex justify-between bg-amber-50 p-2 rounded mt-2">
           <span>{item.nombre} x{item.cantidad}</span>
-          <button onClick={() => eliminarProducto(i)}>❌</button>
+          const [seleccion, setSeleccion] = useState<{[key: string]: number}>({});
+
+...
+
+<select
+  className="w-full mt-3 border rounded-xl px-3 py-2"
+  value={seleccion[producto.id] ?? 0}
+  onChange={(e) =>
+    setSeleccion({
+      ...seleccion,
+      [producto.id]: Number(e.target.value),
+    })
+  }
+>
+  {producto.variantes.map((v, i) => (
+    <option key={i} value={i}>
+      {v.nombre} - ${v.precio.toLocaleString('es-AR')}
+    </option>
+  ))}
+</select>
+
+<button
+  onClick={() => {
+    const varianteIndex = seleccion[producto.id] ?? 0;
+    const variante = producto.variantes[varianteIndex];
+
+    agregarAlCarrito({
+      nombre: `${producto.nombre} (${variante.nombre})`,
+      variantes: [{ nombre: variante.nombre, precio: variante.precio }],
+    });
+  }}
+  className="mt-3 w-full bg-amber-500 text-white py-2 rounded-xl"
+>
+  Agregar al pedido
+</button>
         </div>
       ))}
     </div>
