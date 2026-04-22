@@ -286,33 +286,9 @@ return (
               </div>
             ))}
           </div>
-        </section>
-<section id="pedido" className="mt-16 rounded-3xl bg-white p-8 shadow-sm border border-amber-100">
-  <h2 className="text-3xl font-bold">Formulario de pedido</h2>
-
-  <p className="text-sm text-stone-500 mt-2">
-    Trabajamos por pedidos con al menos 24hs de anticipación para garantizar calidad y frescura 💛
-  </p>
-
-  <p className="mt-2 text-stone-600">
-    Completás los datos y el pedido sale armado directo a WhatsApp.
-  </p>
-
-  <div className="mt-8 grid gap-6 md:grid-cols-2">
+        </section> {/* cierre de productos */}
     
-    <div>
-      <label className="mb-2 block text-sm font-medium">Nombre</label>
-      <input value={nombre} onChange={(e) => setNombre(e.target.value)} className="w-full rounded-2xl border border-stone-300 px-4 py-3 outline-none" />
-    </div>
-
-    <div>
-      <label className="mb-2 block text-sm font-medium">Teléfono</label>
-      <input value={telefono} onChange={(e) => setTelefono(e.target.value)} className="w-full rounded-2xl border border-stone-300 px-4 py-3 outline-none" />
-    </div>
-
-    <div>
-      <label className="mb-2 block text-sm font-medium">Producto</label>
-      <section id="pedido" className="mt-16 rounded-3xl bg-white p-8 shadow-sm border border-amber-100">
+    <section id="pedido" className="mt-16 rounded-3xl bg-white p-8 shadow-sm border border-amber-100">
   <h2 className="text-3xl font-bold">Formulario de pedido</h2>
 
   <p className="text-sm text-stone-500 mt-2">
@@ -427,7 +403,6 @@ return (
   >
     Enviar pedido por WhatsApp
   </a>
-
 </section>
        </main>
     </div>
