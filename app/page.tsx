@@ -293,7 +293,7 @@ return (
           ))}
         </div>
 
-        {/* SELECT (FUERA del map de variantes) */}
+        {/* SELECT (FUERA DEL MAP) */}
         <select
           className="w-full mt-3 border rounded-xl px-3 py-2"
           value={seleccion[producto.id] ?? 0}
