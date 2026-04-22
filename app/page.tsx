@@ -140,6 +140,7 @@ type Producto = {
   const [telefono, setTelefono] = useState('');
   const [fecha, setFecha] = useState('');
   const [nota, setNota] = useState('');
+  const [seleccion, setSeleccion] = useState<{[key: string]: number}>({});
 
   // 🧾 CARRITO (UNA SOLA VEZ)
   const [carrito, setCarrito] = useState<{
@@ -279,13 +280,38 @@ return (
                 </div>
               ))}
             </div>
+<select
+  className="w-full mt-3 border rounded-xl px-3 py-2"
+  value={seleccion[producto.id] ?? 0}
+  onChange={(e) =>
+    setSeleccion({
+      ...seleccion,
+      [producto.id]: Number(e.target.value),
+    })
+  }
+>
+  {producto.variantes.map((v, i) => (
+    <option key={i} value={i}>
+      {v.nombre} - ${v.precio.toLocaleString('es-AR')}
+    </option>
+  ))}
+</select>
 
-            <button
-              onClick={() => agregarAlCarrito(producto)}
-              className="mt-4 w-full bg-amber-500 text-white py-2 rounded-xl"
-            >
-              Agregar al pedido
-            </button>
+<button
+  onClick={() => {
+    const varianteIndex = seleccion[producto.id] ?? 0;
+    const variante = producto.variantes[varianteIndex];
+
+   agregarAlCarrito({
+  nombre: `${producto.nombre} (${variante.nombre})`,
+  precio: variante.precio,
+});
+  }}
+  className="mt-3 w-full bg-amber-500 text-white py-2 rounded-xl"
+>
+  Agregar al pedido
+</button>
+           
           </div>
 
         </div>
@@ -303,7 +329,7 @@ return (
       {carrito.map((item, i) => (
         <div key={i} className="flex justify-between bg-amber-50 p-2 rounded mt-2">
           <span>{item.nombre} x{item.cantidad}</span>
-          const [seleccion, setSeleccion] = useState<{[key: string]: number}>({});
+          
 
 ...
 
