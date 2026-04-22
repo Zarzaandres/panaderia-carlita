@@ -260,63 +260,75 @@ return (
     </div>
 
     <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
-      {productos.map((producto) => (
-        <div key={producto.id} className="overflow-hidden rounded-3xl bg-white shadow-sm border border-amber-100">
+  {productos.map((producto) => (
+    <div
+      key={producto.id}
+      className="overflow-hidden rounded-3xl bg-white shadow-sm border border-amber-100"
+    >
+      <img
+        src={producto.imagen}
+        alt={producto.nombre}
+        className="h-56 w-full object-cover"
+      />
 
-          <img src={producto.imagen} alt={producto.nombre} className="h-56 w-full object-cover" />
+      <div className="p-6">
+        <h3 className="text-xl font-semibold">{producto.nombre}</h3>
+        <p className="mt-2 text-stone-600">{producto.descripcion}</p>
+        <p className="mt-3 text-sm italic text-amber-800">
+          “{producto.frase}”
+        </p>
 
-          <div className="p-6">
-            <h3 className="text-xl font-semibold">{producto.nombre}</h3>
-            <p className="mt-2 text-stone-600">{producto.descripcion}</p>
-            <p className="mt-3 text-sm italic text-amber-800">“{producto.frase}”</p>
-
-            <div className="mt-4 space-y-2 text-sm text-stone-700">
-              {producto.variantes.map((variante) => (
-                <div key={variante.nombre} className="flex justify-between bg-amber-50 px-3 py-2 rounded-xl">
-                  <span>{variante.nombre}</span>
-                  <span className="font-semibold">
-                    ${variante.precio.toLocaleString('es-AR')}
-                  </span>
-                </div>
-              ))}
+        <div className="mt-4 space-y-2 text-sm text-stone-700">
+          {producto.variantes.map((variante) => (
+            <div
+              key={variante.nombre}
+              className="flex justify-between bg-amber-50 px-3 py-2 rounded-xl"
+            >
+              <span>{variante.nombre}</span>
+              <span className="font-semibold">
+                ${variante.precio.toLocaleString('es-AR')}
+              </span>
             </div>
-<select
-  className="w-full mt-3 border rounded-xl px-3 py-2"
-  value={seleccion[producto.id] ?? 0}
-  onChange={(e) =>
-    setSeleccion({
-      ...seleccion,
-      [producto.id]: Number(e.target.value),
-    })
-  }
->
-  {producto.variantes.map((v, i) => (
-    <option key={i} value={i}>
-      {v.nombre} - ${v.precio.toLocaleString('es-AR')}
-    </option>
-  ))}
-</select>
-
-<button
-  onClick={() => {
-    const varianteIndex = seleccion[producto.id] ?? 0;
-    const variante = producto.variantes[varianteIndex];
-
-   agregarAlCarrito({
-  nombre: `${producto.nombre} (${variante.nombre})`,
-  precio: variante.precio,
-});
-  }}
-  className="mt-3 w-full bg-amber-500 text-white py-2 rounded-xl"
->
-  Agregar al pedido
-</button>
-           
-          </div>
-
+          ))}
         </div>
-      ))}
+
+        {/* 👇 ACÁ VA EL SELECT (IMPORTANTE: dentro de este div) */}
+        <select
+          className="w-full mt-3 border rounded-xl px-3 py-2"
+          value={seleccion[producto.id] ?? 0}
+          onChange={(e) =>
+            setSeleccion({
+              ...seleccion,
+              [producto.id]: Number(e.target.value),
+            })
+          }
+        >
+          {producto.variantes.map((v, i) => (
+            <option key={i} value={i}>
+              {v.nombre} - ${v.precio.toLocaleString('es-AR')}
+            </option>
+          ))}
+        </select>
+
+        {/* BOTÓN */}
+        <button
+          onClick={() => {
+            const variante =
+              producto.variantes[seleccion[producto.id] ?? 0];
+
+            agregarAlCarrito({
+              nombre: `${producto.nombre} (${variante.nombre})`,
+              precio: variante.precio,
+            });
+          }}
+          className="mt-3 w-full bg-amber-500 text-white py-2 rounded-xl"
+        >
+          Agregar al pedido
+        </button>
+      </div>
     </div>
+  ))}
+</div>
   </section>
 
   {/* PEDIDO */}
