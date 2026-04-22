@@ -137,7 +137,7 @@ type Producto = {
 };
 
 // ================== COMPONENTE ==================
-export default function PanaderiaCarlitaWeb() {
+
 
   // ================== ESTADOS ==================
   const [nombre, setNombre] = useState('');
