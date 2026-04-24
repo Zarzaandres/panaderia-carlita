@@ -231,11 +231,7 @@ export default function PanaderiaCarlitaWeb() {
               Coordinamos por WhatsApp.
             </p>
           </div>
-
-          <a
-            href="#pedido"
-            className="mt-6 inline-block rounded-2xl bg-stone-900 px-7 py-3 text-white text-lg shadow hover:scale-[1.02] transition"
-          >{/* ANUNCIO ENVÍOS GRATIS */}
+          {/* ANUNCIO ENVÍOS GRATIS */}
 <div className="mt-3 bg-green-50 border border-green-300 rounded-2xl px-5 py-4 max-w-xl flex items-start gap-3">
   <span className="text-2xl">🚚</span>
   <div>
@@ -245,6 +241,11 @@ export default function PanaderiaCarlitaWeb() {
     </p>
   </div>
 </div>
+
+          <a
+            href="#pedido"
+            className="mt-6 inline-block rounded-2xl bg-stone-900 px-7 py-3 text-white text-lg shadow hover:scale-[1.02] transition"
+          >
             Hacer mi pedido →
           </a>
         </div>
