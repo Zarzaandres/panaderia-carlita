@@ -71,7 +71,7 @@ const productos: ProductoType[] = [
   frase: 'Suave, alto y perfecto para rellenar o disfrutar solo.',
   imagen: '/productos/bizcochuelo.jpg',
   ingredientes: 'Harina leudante, huevos, azúcar, leche, esencia de vainilla y aceite.',
-}
+},
 {
   id: 'bizcochitos-jamon-queso',
   nombre: 'Bizcochitos de jamón y queso',
