@@ -235,7 +235,16 @@ export default function PanaderiaCarlitaWeb() {
           <a
             href="#pedido"
             className="mt-6 inline-block rounded-2xl bg-stone-900 px-7 py-3 text-white text-lg shadow hover:scale-[1.02] transition"
-          >
+          >{/* ANUNCIO ENVÍOS GRATIS */}
+<div className="mt-3 bg-green-50 border border-green-300 rounded-2xl px-5 py-4 max-w-xl flex items-start gap-3">
+  <span className="text-2xl">🚚</span>
+  <div>
+    <p className="font-semibold text-green-800 text-base">¡Envíos gratis este sábado 26/04!</p>
+    <p className="mt-1 text-green-700 text-sm leading-relaxed">
+      Por un día especial, todos los pedidos con entrega el <strong>sábado 26 de abril</strong> tienen envío sin costo. ¡Aprovechalo!
+    </p>
+  </div>
+</div>
             Hacer mi pedido →
           </a>
         </div>
