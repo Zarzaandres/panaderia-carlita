@@ -65,14 +65,25 @@ const productos: ProductoType[] = [
   id: 'bizcochuelo',
   nombre: 'Bizcochuelo casero',
   variantes: [
-    { nombre: 'Molde chico (20cm)', precio: 5000 },
-    { nombre: 'Molde mediano (25cm)', precio: 7500 },
-    { nombre: 'Molde grande (30cm)', precio: 10000 },
+    { nombre: 'Molde mediano (24cm)', precio: 7500 },
   ],
   descripcion: 'Bizcochuelo esponjoso y casero, ideal para cumpleaños, celebraciones o para acompañar el mate.',
   frase: 'Suave, alto y perfecto para rellenar o disfrutar solo.',
   imagen: '/productos/bizcochuelo.jpg',
   ingredientes: 'Harina leudante, huevos, azúcar, leche, esencia de vainilla y aceite.',
+}
+{
+  id: 'bizcochitos-jamon-queso',
+  nombre: 'Bizcochitos de jamón y queso',
+  variantes: [
+    { nombre: '100g', precio: 1300 },
+    { nombre: '200g', precio: 2600 },
+    { nombre: '300g', precio: 3500 },
+  ],
+  descripcion: 'Bizcochitos suaves y salados, rellenos con jamón y queso, ideales para picadas o meriendas.',
+  frase: 'Chiquitos, calentitos y llenos de sabor.',
+  imagen: '/productos/bizcochitos.jpg',
+  ingredientes: 'Harina 0000, grasa, sal, levadura, jamón y queso.',
 }
   /*{
     id: 'pan-molde-relleno',
