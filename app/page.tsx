@@ -237,7 +237,7 @@ export default function PanaderiaCarlitaWeb() {
   <div>
     <p className="font-semibold text-green-800 text-base">¡Envíos gratis este sábado 26/04!</p>
     <p className="mt-1 text-green-700 text-sm leading-relaxed">
-      Por un día especial, todos los pedidos con entrega el <strong>sábado 26 de abril</strong> tienen envío sin costo. ¡Aprovechalo!
+      Por un día especial, todos los pedidos con entrega el <strong>sábado 25 de abril</strong> tienen envío sin costo. ¡Aprovechalo!
     </p>
   </div>
 </div>
