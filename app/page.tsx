@@ -62,6 +62,19 @@ const productos: ProductoType[] = [
     ingredientes: 'Harina 0000, extracto de malta, grasa vacuna, sal, levadura y margarina hojaldre.',
   },
   {
+  id: 'bizcochuelo',
+  nombre: 'Bizcochuelo casero',
+  variantes: [
+    { nombre: 'Molde chico (20cm)', precio: 5000 },
+    { nombre: 'Molde mediano (25cm)', precio: 7500 },
+    { nombre: 'Molde grande (30cm)', precio: 10000 },
+  ],
+  descripcion: 'Bizcochuelo esponjoso y casero, ideal para cumpleaños, celebraciones o para acompañar el mate.',
+  frase: 'Suave, alto y perfecto para rellenar o disfrutar solo.',
+  imagen: '/productos/bizcochuelo.jpg',
+  ingredientes: 'Harina leudante, huevos, azúcar, leche, esencia de vainilla y aceite.',
+}
+  /*{
     id: 'pan-molde-relleno',
     nombre: 'Pan de molde con relleno',
     variantes: [{ nombre: 'Unidad', precio: 7000 }],
@@ -69,8 +82,8 @@ const productos: ProductoType[] = [
     frase: 'Sabor casero que llena la mesa.',
     imagen: '/productos/budin-pan-salado.jpg',
     ingredientes: 'Harina 0000, sal, levadura, extracto de malta, manteca, azúcar, leche, agua, jamón, queso.',
-  },
-  {
+  },*/
+  /*{
     id: 'sopa-paraguaya',
     nombre: 'Sopa paraguaya',
     variantes: [
@@ -81,8 +94,8 @@ const productos: ProductoType[] = [
     frase: 'Perfecta para acompañar cualquier comida.',
     imagen: '/productos/sopa-paraguaya.jpeg',
     ingredientes: 'Harina de maíz, leche, cebollas, huevos, queso, choclo, orégano, sal, pimienta.',
-  },
-  {
+  },*/
+  /*{
     id: 'torta-queso',
     nombre: 'Torta de queso',
     variantes: [
@@ -93,7 +106,7 @@ const productos: ProductoType[] = [
     frase: 'Un postre irresistible.',
     imagen: '/productos/torta-queso.jpg',
     ingredientes: 'Harina leudante, polvo de hornear, leche, manteca, sal, huevos y queso.',
-  },
+  },*/
 ];
 
 // ================== COMPONENTE ==================
