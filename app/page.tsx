@@ -94,7 +94,7 @@ const productos: ProductoType[] = [
     imagen: '/productos/budin-pan-salado.jpg',
     ingredientes: 'Harina 0000, sal, levadura, extracto de malta, manteca, azúcar, leche, agua, jamón, queso.',
   },*/
-  {
+  /*{
     id: 'sopa-paraguaya',
     nombre: 'Sopa paraguaya',
     variantes: [
@@ -117,7 +117,7 @@ const productos: ProductoType[] = [
     frase: 'Un postre irresistible.',
     imagen: '/productos/torta-queso.jpg',
     ingredientes: 'Harina leudante, polvo de hornear, leche, manteca, sal, huevos y queso.',
-  },
+  },*/
 ];
 
 // ================== COMPONENTE ==================
