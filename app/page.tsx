@@ -84,7 +84,7 @@ const productos: ProductoType[] = [
   frase: 'Chiquitos, calentitos y llenos de sabor.',
   imagen: '/productos/bizcochitos.jpg',
   ingredientes: 'Harina 0000, grasa, sal, levadura, jamón y queso.',
-}
+},
   /*{
     id: 'pan-molde-relleno',
     nombre: 'Pan de molde con relleno',
