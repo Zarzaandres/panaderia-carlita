@@ -85,6 +85,17 @@ const productos: ProductoType[] = [
   imagen: '/productos/bizcochitos.jpg',
   ingredientes: 'Harina 0000, grasa, sal, levadura, jamón y queso.',
 },
+{
+  id: 'torta-alfajor-maicena',
+  nombre: 'Torta alfajor de maicena',
+  variantes: [
+    { nombre: 'Entera', precio: 28000 }
+  ],
+  descripcion: 'Torta tipo alfajor gigante de maicena, rellena con abundante dulce de leche y cubierta con coco rallado.',
+  frase: 'El clásico alfajor, pero en versión torta 🤍',
+  imagen: '/productos/torta-alfajor.jpeg',
+  ingredientes: 'Maicena, harina, huevos, manteca, azúcar, dulce de leche y coco rallado.',
+},
   /*{
     id: 'pan-molde-relleno',
     nombre: 'Pan de molde con relleno',
@@ -232,15 +243,7 @@ export default function PanaderiaCarlitaWeb() {
             </p>
           </div>
           {/* ANUNCIO ENVÍOS GRATIS */}
-<div className="mt-3 bg-green-50 border border-green-300 rounded-2xl px-5 py-4 max-w-xl flex items-start gap-3">
-  <span className="text-2xl">🚚</span>
-  <div>
-    <p className="font-semibold text-green-800 text-base">¡Envíos gratis este Domingo 26/04!</p>
-    <p className="mt-1 text-green-700 text-sm leading-relaxed">
-      Por un día especial, todos los pedidos con entrega el <strong>Domingo 26 de abril</strong> tienen envío sin costo. ¡Aprovechalo!
-    </p>
-  </div>
-</div>
+
 
           <a
             href="#pedido"
