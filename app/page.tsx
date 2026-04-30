@@ -96,7 +96,7 @@ const productos: ProductoType[] = [
   imagen: '/productos/torta-alfajor.jpeg',
   ingredientes: 'Maicena, harina, huevos, manteca, azúcar, dulce de leche y coco rallado.',
 },
-  /*{
+  {
     id: 'pan-molde-relleno',
     nombre: 'Pan de molde con relleno',
     variantes: [{ nombre: 'Unidad', precio: 7000 }],
@@ -104,7 +104,7 @@ const productos: ProductoType[] = [
     frase: 'Sabor casero que llena la mesa.',
     imagen: '/productos/budin-pan-salado.jpg',
     ingredientes: 'Harina 0000, sal, levadura, extracto de malta, manteca, azúcar, leche, agua, jamón, queso.',
-  },*/
+  },
   {
     id: 'sopa-paraguaya',
     nombre: 'Sopa paraguaya',
